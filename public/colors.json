@@ -1,0 +1,22 @@
+﻿{
+  "colors": [
+    {
+      "gradient": true,
+      "colorMain": "FCEF04",
+      "colorSecondaryGradient": "DC419B",
+      "colorMainAlt": "FFC985",
+      "colorContrast": "1C1C1C",
+      "colorLight": "DBDBDB",
+      "colorDark": "1C1C1C"
+    },
+    {
+      "gradient": true,
+      "colorMain": "1C1C1C",
+      "colorSecondaryGradient": "DC419B",
+      "colorMainAlt": "1C1C1C",
+      "colorContrast": "1C1C1C",
+      "colorLight": "1C1C1C",
+      "colorDark": "1C1C1C"
+    }
+  ]
+}
