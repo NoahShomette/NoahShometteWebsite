@@ -1,0 +1,43 @@
+﻿.button {
+    background-color: var(--color-main-alt);
+    padding: 10px 20px 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    display: flex;
+    place-items: center;
+    transition: all 0.3s;
+}
+
+.button:hover {
+    cursor: pointer;
+    background-color: var(--color-contrast);
+}
+
+.button.hovered {
+}
+
+.icon{
+}
+
+.icon * {
+    transition: all 0.3s;
+}
+
+.icon.hovered * {
+    color: var(--color-main-alt);
+}
+
+.spacer {
+    padding: 0 5px 5px;
+}
+
+.text {
+    font-weight: bold;
+    font-size: 24px;
+    transition: all 0.3s;
+}
+
+.text.hovered {
+    display: inline-block;
+    color: var(--color-main-alt);
+}

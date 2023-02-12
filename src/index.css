@@ -7,16 +7,23 @@
     --color-contrast: #1C1C1C;
     --color-light: #DBDBDB;
     --color-dark: #1C1C1C;
-    
     background-color: var(--color-main);
+
     color: black;
+}
+
+:root.gradient {
+    min-height: 100%;
+    min-width: 100%;
+    background: linear-gradient(120deg, var(--color-main) 0%, var(--color-secondary-gradient) 100%) fixed;
 }
 
 body {
     margin: 0;
     font-family: 'Montserrat', sans-serif;
     font-weight: 500;
-  
+
+
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }

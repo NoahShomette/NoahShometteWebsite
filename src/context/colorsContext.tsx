@@ -17,7 +17,7 @@ const colorInfoDefault: colorInfo = {
     colorSecondaryGradient: "DC419B",
     colorMainAlt: "FFC985",
     colorContrast: "1C1C1C",
-    colorLight: "DBDBDB",
+    colorLight: "FFFFFF",
     colorDark: "1C1C1C",
 }
 
@@ -53,6 +53,7 @@ export default function ColorsProvider({children}: Props) {
     const [colorsLoaded, setIsLoaded] = useState<boolean>(false);
     const [activeColor, setColor] = useState<colorInfo>(colorInfoDefault);
 
+
     useEffect(() => {
         fetch("colors.json").then(function (res) {
             return res.json()
@@ -62,25 +63,36 @@ export default function ColorsProvider({children}: Props) {
             setIsLoaded(true);
         });
     });
-    
-    const changeActiveColor = (newColor: colorInfo) => {
-        if (colorsLoaded) {
-            setColor(newColor);
-            
-            document.documentElement.style
-                .setProperty('--color-main', "#" + newColor.colorMain);
-            document.documentElement.style
-                .setProperty('--color-secondary-gradient', "#" + newColor.colorSecondaryGradient);
-            document.documentElement.style
-                .setProperty('--color-main-alt', "#" + newColor.colorMainAlt);
-            document.documentElement.style
-                .setProperty('--color-contrast', "#" + newColor.colorContrast);
-            document.documentElement.style
-                .setProperty('--color-light', "#" + newColor.colorLight);
-            document.documentElement.style
-                .setProperty('--color-dark', "#" + newColor.colorDark);
+
+    const updateStyles = (newColor: colorInfo) => {
+        if (newColor.gradient) {
+            document.querySelector(':root')?.classList.add("gradient");
+        } else {
+            document.querySelector(':root')?.classList.remove("gradient");
         }
+        document.documentElement.style
+            .setProperty('--color-main', "#" + newColor.colorMain);
+        document.documentElement.style
+            .setProperty('--color-secondary-gradient', "#" + newColor.colorSecondaryGradient);
+        document.documentElement.style
+            .setProperty('--color-main-alt', "#" + newColor.colorMainAlt);
+        document.documentElement.style
+            .setProperty('--color-contrast', "#" + newColor.colorContrast);
+        document.documentElement.style
+            .setProperty('--color-light', "#" + newColor.colorLight);
+        document.documentElement.style
+            .setProperty('--color-dark', "#" + newColor.colorDark);
     }
+
+    const changeActiveColor = (newColor: colorInfo) => {
+        setColor(newColor);
+        updateStyles(newColor);
+    }
+
+    useEffect(() => {
+        updateStyles(colorInfoDefault);
+    }, [])
+
 
     const value = {
         activeColor,

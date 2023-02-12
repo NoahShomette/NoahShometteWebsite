@@ -6,7 +6,6 @@ function Index() {
         <>
             <h1>this is the homepage</h1>
             <ColorSelecter></ColorSelecter>
-            
         </>
 
     );
