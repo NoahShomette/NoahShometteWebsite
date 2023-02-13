@@ -80,8 +80,10 @@
     box-shadow: -5px 5px 40px rgba(1,1,1,0.5);
 }
 
-.colorSelector.colorSelectorEnabled{
-    display: block;
+@media screen and (min-width: 1200px) {
+    .colorSelector.colorSelectorEnabled{
+        display: block;
+    }
 }
 
 .mobileRightSide {
@@ -90,6 +92,10 @@
     justify-content: end;
     align-items: center;
     width: 100%;
+}
+
+.hamburger > div{
+    padding: 20px;
 }
 
 @media screen and (min-width: 1200px) {
@@ -133,7 +139,7 @@
     display: none;
     background-color: var(--color-main);
     padding: 10px;
-    border-radius: 10px;
+    border-radius: 40px;
     transition: all 1s;
     box-shadow: -5px 5px 40px rgba(1,1,1,0.5);
 }
@@ -193,7 +199,7 @@
     align-items: center;
     height: 50%;
     width: 100%;
-    margin-right: 5px;
+    margin-right: 0px;
     margin-left: 20px;
 }
 
@@ -202,6 +208,10 @@
     content: " ";
     height: 3px;
     width: 100%;
+}
+
+.mobileMenuCloseButton > div{
+    padding: 20px;
 }
 
 .mobileButtons{

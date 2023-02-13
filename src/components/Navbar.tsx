@@ -52,11 +52,11 @@ export default function Navbar() {
                                 textSize={ButtonSize.small}/>
                     <Button buttonText={"Github"} buttonLink={"https://github.com/NoahShomette"} icon={true}
                             iconDefinition={faUpRightFromSquare} text={true} link={true} background={true}
-                            textSize={ButtonSize.small}/>
+                            textSize={ButtonSize.small} iconSize={"sm"}/>
                     <VerticalSpacer></VerticalSpacer>
                     <Button buttonText={""} buttonLink={""} icon={true}
                             iconDefinition={faPalette} text={false} link={false} background={true}
-                            textSize={ButtonSize.small} buttonOnClick={handleColorSelectorClick}/>
+                            textSize={ButtonSize.small} buttonOnClick={handleColorSelectorClick} iconSize={"lg"}/>
 
                 </div>
                 <div className={styles.lineHolder}>
@@ -72,9 +72,13 @@ export default function Navbar() {
                 <div className={styles.mobileNavLeftLine}>
                     <div className={styles.mobileLine}></div>
                 </div>
-                <Button buttonText={""} buttonLink={""} icon={true}
-                        iconDefinition={faBars} text={false} link={false}
-                        buttonOnClick={handleMobileNavClick} background={false} textSize={ButtonSize.medium}/>
+                <div className={styles.hamburger}>
+                    <Button buttonText={""} buttonLink={""} icon={true}
+                            iconDefinition={faBars} text={false} link={false}
+                            buttonOnClick={handleMobileNavClick} background={false} textSize={ButtonSize.medium}
+                            iconSize={"xl"}/>
+                </div>
+                
                 <div className={styles.mobileNavRightLine}>
                     <div className={styles.mobileLine}></div>
                 </div>
@@ -85,9 +89,13 @@ export default function Navbar() {
                     <div className={styles.mobileMenuLineHolder}>
                         <div className={styles.mobileMenuLine}></div>
                     </div>
-                    <Button buttonText={""} buttonLink={""} icon={true}
-                            iconDefinition={faX} text={false} link={false}
-                            buttonOnClick={handleMobileNavClick} background={false} textSize={ButtonSize.medium}/>
+                    <div className={styles.mobileMenuCloseButton}>
+                        <Button buttonText={""} buttonLink={""} icon={true}
+                                iconDefinition={faX} text={false} link={false}
+                                buttonOnClick={handleMobileNavClick} background={false} textSize={ButtonSize.medium}
+                                iconSize={"lg"}/>
+                    </div>
+                   
                 </div>
                 <div className={styles.mobileButtons}>
                     <LinkButton buttonLink={"/"} buttonText={"Home"} background={false} textSize={ButtonSize.medium}/>
@@ -97,7 +105,7 @@ export default function Navbar() {
                                 textSize={ButtonSize.medium}/>
                     <Button buttonText={"Github"} buttonLink={"https://github.com/NoahShomette"} icon={true}
                             iconDefinition={faUpRightFromSquare} text={true} link={true} background={false}
-                            textSize={ButtonSize.medium}/>
+                            textSize={ButtonSize.medium} iconSize={"lg"}/>
                 </div>
                 <div className={styles.mobileColorSelector}>
                     <ColorSelector></ColorSelector>

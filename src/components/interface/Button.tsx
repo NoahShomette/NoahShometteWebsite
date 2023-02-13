@@ -14,12 +14,13 @@ interface ButtonProps {
 
     icon: boolean;
     iconDefinition: IconDefinition;
+    iconSize: SizeProp;
     buttonOnClick?: React.MouseEventHandler;
     background: boolean;
     textSize: ButtonSize;
 }
 
-export default function ButtonWithBg(props: ButtonProps) {
+export default function Button(props: ButtonProps) {
 
     const [hovered, setHovered] = useState(false);
 
@@ -80,16 +81,11 @@ export default function ButtonWithBg(props: ButtonProps) {
     function getContent() {
 
         let content: ReactNode[] = [];
-        let iconSize: SizeProp = "1x";
 
         if (props.icon) {
-
-            if (!props.text) {
-                iconSize = "lg"
-            }
             content.push(<div>
-                <FontAwesomeIcon icon={props.iconDefinition} className={[styles.icon, textStyles].join(" ")}
-                                 size={iconSize}/>
+                <FontAwesomeIcon icon={props.iconDefinition} className={[styles.icon, buttonStyles].join(" ")}
+                                 size={props.iconSize}/>
             </div>)
         }
 

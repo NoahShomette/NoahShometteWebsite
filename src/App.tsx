@@ -9,10 +9,10 @@ import ColorsProvider from "./context/colorsContext";
 
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fab } from '@fortawesome/free-brands-svg-icons'
-import {faUpRightFromSquare, faPlus, faX, faPalette, faBars} from "@fortawesome/free-solid-svg-icons";
+import {faUpRightFromSquare, faPlus, faX, faPalette, faBars, faCircleArrowLeft, faCircleArrowRight} from "@fortawesome/free-solid-svg-icons";
 import FourOhFour from "./pages/FourOhFour";
 
-library.add(fab, faUpRightFromSquare, faPlus, faX, faPalette, faBars)
+library.add(fab, faUpRightFromSquare, faPlus, faX, faPalette, faBars, faCircleArrowLeft, faCircleArrowRight)
 function App() {
     return (
         <ColorsProvider>
