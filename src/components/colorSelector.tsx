@@ -28,7 +28,7 @@ export default function ColorSelector() {
         let content: ReactNode[] = [];
 
         for (let i = 0; i <= tabCount; i++) {
-            if (i == colorTab) {
+            if (i === colorTab) {
                 content.push(<div className={[styles.dot, styles.dotActive].join(" ")}></div>)
             } else {
                 content.push(<div className={styles.dot}></div>)

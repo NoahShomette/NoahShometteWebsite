@@ -14,7 +14,7 @@
     line-height: 1.2;
 }
 
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 1200px) {
     .navbar {
         display: flex;
         flex-direction: row;
@@ -35,7 +35,7 @@
     display: none;
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 800px) {
     .rightNav {
         display: block;
     }
@@ -78,7 +78,7 @@
     box-shadow: -5px 5px 40px rgba(1,1,1,0.5);
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 800px) {
     .colorSelector.colorSelectorEnabled{
         display: block;
     }
@@ -96,7 +96,7 @@
     padding: 20px;
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 800px) {
     .mobileRightSide {
         display: none;
     }
@@ -165,7 +165,7 @@
     backdrop-filter: blur(5px)
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 800px) {
     .mobileBackgroundBlur.mobileMenuEnabled {
         display: none;
     }
@@ -177,7 +177,7 @@
     right: 35px;
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 800px) {
     .mobileMenu.mobileMenuEnabled {
         display: none;
     }

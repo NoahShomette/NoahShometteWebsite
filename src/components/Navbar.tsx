@@ -3,7 +3,7 @@ import {faBars, faPalette, faUpRightFromSquare, faX} from "@fortawesome/free-sol
 import LinkButton from "./interface/LinkButton";
 import Button from "./interface/Button";
 import VerticalSpacer from "./design/spacers/VerticalSpacer";
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import {useColors} from "../context/colorsContext";
 import {ButtonSize} from "../utils/options";
 import ColorSelector from "./colorSelector";
@@ -11,6 +11,7 @@ import ColorSelector from "./colorSelector";
 export default function Navbar() {
     const [mobileMenuVisible, setMobileMenuIsVisible] = useState(false);
     const [colorSelectorVisible, setColorSelectorIsVisible] = useState(false);
+    const [mQuery, setMQuery] = useState({matches: window.innerWidth > 1200});
 
     let colorContext = useColors();
 
@@ -37,6 +38,22 @@ export default function Navbar() {
         gradient = styles.gradient;
     }
 
+    useEffect(() => {
+        let mediaQuery = window.matchMedia("(min-width: 1200px)");
+        mediaQuery.addEventListener("change", setMQuery);
+
+        return () => mediaQuery.removeEventListener("change", setMQuery);
+    }, []);
+
+    let buttonSize = ButtonSize.extraSmall;
+    
+    if (mQuery.matches){
+        buttonSize = ButtonSize.small;
+    }else {
+        buttonSize = ButtonSize.extraSmall;
+    }
+
+
     return (
         <nav className={[styles.navbar].join(" ")}>
             <div className={styles.name}>
@@ -45,18 +62,18 @@ export default function Navbar() {
             </div>
             <div className={styles.rightNav}>
                 <div className={styles.buttons}>
-                    <LinkButton buttonLink={"/"} buttonText={"Home"} background={true} textSize={ButtonSize.small}/>
+                    <LinkButton buttonLink={"/"} buttonText={"Home"} background={true} textSize={buttonSize}/>
                     <LinkButton buttonLink={"/skills"} buttonText={"Skills"} background={true}
-                                textSize={ButtonSize.small}/>
+                                textSize={buttonSize}/>
                     <LinkButton buttonLink={"/projects"} buttonText={"Projects"} background={true}
-                                textSize={ButtonSize.small}/>
+                                textSize={buttonSize}/>
                     <Button buttonText={"Github"} buttonLink={"https://github.com/NoahShomette"} icon={true}
                             iconDefinition={faUpRightFromSquare} text={true} link={true} background={true}
-                            textSize={ButtonSize.small} iconSize={"sm"}/>
+                            textSize={buttonSize} iconSize={"sm"}/>
                     <VerticalSpacer></VerticalSpacer>
                     <Button buttonText={""} buttonLink={""} icon={true}
                             iconDefinition={faPalette} text={false} link={false} background={true}
-                            textSize={ButtonSize.small} buttonOnClick={handleColorSelectorClick} iconSize={"lg"}/>
+                            textSize={buttonSize} buttonOnClick={handleColorSelectorClick} iconSize={"lg"}/>
 
                 </div>
                 <div className={styles.lineHolder}>
@@ -110,7 +127,7 @@ export default function Navbar() {
                 <div className={styles.mobileColorSelector}>
                     <ColorSelector></ColorSelector>
                 </div>
-                
+
             </div>
             <div className={[styles.colorSelector, colorSelectorEnabled].join(" ")}>
                 <ColorSelector></ColorSelector>
