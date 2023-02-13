@@ -10,7 +10,7 @@
 
 .name {
     font-weight: 900;
-    font-size: 24px;
+    font-size: 28px;
     line-height: 1.2;
 }
 
@@ -21,7 +21,7 @@
         margin: 20px 35px 20px 35px;
     }
     .name {
-        font-size: 28px;
+        font-size: 32px;
     }
 
 }
@@ -87,7 +87,7 @@
 .mobileRightSide {
     display: flex;
     flex-direction: row;
-    justify-content: end;
+    justify-content: flex-end;
     align-items: center;
     width: 100%;
 }

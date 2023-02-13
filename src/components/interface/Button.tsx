@@ -4,6 +4,7 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {IconDefinition} from "@fortawesome/free-brands-svg-icons";
 import {SizeProp} from "@fortawesome/fontawesome-svg-core";
 import {ButtonSize} from "../../utils/options";
+import {v4 as uuidv4} from 'uuid';
 
 
 interface ButtonProps {
@@ -66,13 +67,13 @@ export default function Button(props: ButtonProps) {
             return (
                 <a href={props.buttonLink} className={[styles.button, buttonStyles].join(" ")}
                    onMouseEnter={handleMouseEnter}
-                   onMouseLeave={handleMouseLeave} onClick={props.buttonOnClick}>
+                   onMouseLeave={handleMouseLeave} onClick={props.buttonOnClick} key={uuidv4()}>
                     {getContent()}
                 </a>
             )
         } else {
             return (<div className={[styles.button, buttonStyles].join(" ")} onMouseEnter={handleMouseEnter}
-                         onMouseLeave={handleMouseLeave} onClick={props.buttonOnClick}>
+                         onMouseLeave={handleMouseLeave} onClick={props.buttonOnClick} key={uuidv4()}>
                 {getContent()}
             </div>)
         }
@@ -83,7 +84,7 @@ export default function Button(props: ButtonProps) {
         let content: ReactNode[] = [];
 
         if (props.icon) {
-            content.push(<div>
+            content.push(<div key={uuidv4()}>
                 <FontAwesomeIcon icon={props.iconDefinition} className={[styles.icon, buttonStyles].join(" ")}
                                  size={props.iconSize}/>
             </div>)
@@ -91,13 +92,13 @@ export default function Button(props: ButtonProps) {
 
         if (props.text && props.icon) {
             content.push(
-                <div className={styles.spacer}></div>
+                <div className={styles.spacer} key={uuidv4()}></div>
             )
         }
 
         if (props.text) {
             content.push(
-                <div className={[styles.text, textStyles].join(" ")}>{props.buttonText}</div>
+                <div className={[styles.text, textStyles].join(" ")} key={uuidv4()}>{props.buttonText}</div>
             )
         }
 

@@ -4,6 +4,7 @@ import {ReactNode, useState} from "react";
 import Button from "./interface/Button";
 import {ButtonSize} from "../utils/options";
 import {faCircleArrowLeft, faCircleArrowRight} from "@fortawesome/free-solid-svg-icons";
+import {v4 as uuidv4} from "uuid";
 
 export default function ColorSelector() {
 
@@ -29,9 +30,9 @@ export default function ColorSelector() {
 
         for (let i = 0; i <= tabCount; i++) {
             if (i === colorTab) {
-                content.push(<div className={[styles.dot, styles.dotActive].join(" ")}></div>)
+                content.push(<div className={[styles.dot, styles.dotActive].join(" ")} key={uuidv4()}></div>)
             } else {
-                content.push(<div className={styles.dot}></div>)
+                content.push(<div className={styles.dot} key={uuidv4()}></div>)
             }
         }
 
@@ -44,7 +45,7 @@ export default function ColorSelector() {
     function getNavigation() {
 
         return (
-            <div className={styles.navigation}>
+            <div className={styles.navigation} key={uuidv4()}>
                 <Button text={false} buttonText={""} link={false} buttonLink={""} icon={true}
                         iconDefinition={faCircleArrowLeft} background={false} textSize={ButtonSize.medium}
                         iconSize={"2x"} buttonOnClick={handleTabLeft}/>
@@ -63,7 +64,6 @@ export default function ColorSelector() {
 
         if (colorsLoaded) {
             for (let i = colorTab * 4; i < colorTab * 4 + 4; i++) {
-                console.log(i);
                 if (i > colors.length - 1) {
                     break;
                 }
@@ -80,7 +80,7 @@ export default function ColorSelector() {
         if (colorsLoaded) {
             let color = colors[index];
             return (
-                <div className={styles.swatchGroup} onClick={() => changeActiveColor(colors[index])}>
+                <div className={styles.swatchGroup} onClick={() => changeActiveColor(colors[index])} key={uuidv4()}>
                     {color.gradient ? <div
                             style={{background: "linear-gradient(120deg, " + color.colorMain + " 0%, " + color.colorSecondaryGradient + " 100%)"}}
                             className={styles.swatch}></div>
@@ -98,7 +98,7 @@ export default function ColorSelector() {
 
     return (
         <>
-            <div className={styles.body}>
+            <div className={styles.body} key={uuidv4()}>
                 {getNavigation()}
                 <div className={styles.swatches}>
                     {getSwatches()}

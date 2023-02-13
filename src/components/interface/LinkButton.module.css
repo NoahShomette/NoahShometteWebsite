@@ -4,7 +4,15 @@
     transition: all 0.3s;
     display: flex;
     place-items: center;
+    justify-content: center;
 }
+
+
+.button *{
+    color: var(--color-contrast);
+    text-decoration: none;
+}
+
 
 .button.background{
     padding: 10px 20px 10px 20px;

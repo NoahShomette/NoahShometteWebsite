@@ -3,7 +3,11 @@
     text-decoration: none;
     display: flex;
     place-items: center;
+    justify-content: center;
     transition: all 0.3s;
+}
+
+.button *{
 }
 
 .button.background{
@@ -23,6 +27,7 @@
 }
 
 .icon * {
+    color: var(--color-contrast);
     transition: all 0.3s;
 }
 
@@ -38,6 +43,8 @@
     font-weight: bold;
     font-size: 24px;
     transition: all 0.3s;
+    color: var(--color-contrast);
+
 }
 
 .text.extraSmall{
