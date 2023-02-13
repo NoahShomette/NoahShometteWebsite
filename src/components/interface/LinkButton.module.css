@@ -1,5 +1,4 @@
 ﻿.button{
-    padding: 10px 20px 10px 20px;
     border-radius: 5px;
     text-decoration: none;
     transition: all 0.3s;
@@ -8,6 +7,7 @@
 }
 
 .button.background{
+    padding: 10px 20px 10px 20px;
     background-color: var(--color-main-alt);
 }
 

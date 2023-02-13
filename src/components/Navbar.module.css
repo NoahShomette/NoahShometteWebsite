@@ -221,6 +221,10 @@
     align-items: center;
 }
 
+.mobileButtons > a{
+    padding: 10px 0 10px 0;
+}
+
 .mobileColorSelector{
     display: flex;
     flex-direction: column;
