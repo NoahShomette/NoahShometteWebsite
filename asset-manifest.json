@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/noahshomette_website/static/css/main.e8b7b6ce.css",
+    "main.js": "/noahshomette_website/static/js/main.17d2e986.js",
+    "static/js/787.35c7430c.chunk.js": "/noahshomette_website/static/js/787.35c7430c.chunk.js",
+    "index.html": "/noahshomette_website/index.html",
+    "main.e8b7b6ce.css.map": "/noahshomette_website/static/css/main.e8b7b6ce.css.map",
+    "main.17d2e986.js.map": "/noahshomette_website/static/js/main.17d2e986.js.map",
+    "787.35c7430c.chunk.js.map": "/noahshomette_website/static/js/787.35c7430c.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e8b7b6ce.css",
+    "static/js/main.17d2e986.js"
+  ]
+}
