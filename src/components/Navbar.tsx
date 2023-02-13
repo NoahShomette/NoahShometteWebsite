@@ -1,26 +1,40 @@
 import styles from "../components/Navbar.module.css";
-import {faUpRightFromSquare, faPalette, faBars, faX} from "@fortawesome/free-solid-svg-icons";
-import LinkButtonWithBg from "./interface/LinkButtonWithBg";
-import ButtonWithBg from "./interface/ButtonWithBg";
+import {faBars, faPalette, faUpRightFromSquare, faX} from "@fortawesome/free-solid-svg-icons";
+import LinkButton from "./interface/LinkButton";
+import Button from "./interface/Button";
 import VerticalSpacer from "./design/spacers/VerticalSpacer";
-import ButtonWithoutBg from "./interface/ButtonWithoutBg";
-import {useState} from "react";
+import React, {useState} from "react";
 import {useColors} from "../context/colorsContext";
-import LinkButtonWithoutBg from "./interface/LinkButtonWithoutBg";
+import {ButtonSize} from "../utils/options";
+import ColorSelector from "./colorSelector";
 
 export default function Navbar() {
-    const [mobileMenuVisible, setIsVisible] = useState(false);
+    const [mobileMenuVisible, setMobileMenuIsVisible] = useState(false);
+    const [colorSelectorVisible, setColorSelectorIsVisible] = useState(false);
 
     let colorContext = useColors();
 
     const handleMobileNavClick = () => {
-        setIsVisible(!mobileMenuVisible);
+        setMobileMenuIsVisible(!mobileMenuVisible);
+    }
+
+    const handleColorSelectorClick = () => {
+        setColorSelectorIsVisible(!colorSelectorVisible);
+    }
+
+    let colorSelectorEnabled = "";
+    if (colorSelectorVisible) {
+        colorSelectorEnabled = styles.colorSelectorEnabled;
     }
 
     let mobileMenuEnabled = "";
-
     if (mobileMenuVisible) {
         mobileMenuEnabled = styles.mobileMenuEnabled;
+    }
+
+    let gradient = "";
+    if (colorContext.activeColor.gradient) {
+        gradient = styles.gradient;
     }
 
     return (
@@ -31,14 +45,18 @@ export default function Navbar() {
             </div>
             <div className={styles.rightNav}>
                 <div className={styles.buttons}>
-                    <LinkButtonWithBg buttonLink={"/"} buttonText={"Home"}/>
-                    <LinkButtonWithBg buttonLink={"/skills"} buttonText={"Skills"}/>
-                    <LinkButtonWithBg buttonLink={"/projects"} buttonText={"Projects"}/>
-                    <ButtonWithBg buttonText={"Github"} buttonLink={"https://github.com/NoahShomette"} icon={true}
-                                  iconDefinition={faUpRightFromSquare} text={true} link={true}/>
+                    <LinkButton buttonLink={"/"} buttonText={"Home"} background={true} textSize={ButtonSize.small}/>
+                    <LinkButton buttonLink={"/skills"} buttonText={"Skills"} background={true}
+                                textSize={ButtonSize.small}/>
+                    <LinkButton buttonLink={"/projects"} buttonText={"Projects"} background={true}
+                                textSize={ButtonSize.small}/>
+                    <Button buttonText={"Github"} buttonLink={"https://github.com/NoahShomette"} icon={true}
+                            iconDefinition={faUpRightFromSquare} text={true} link={true} background={true}
+                            textSize={ButtonSize.small}/>
                     <VerticalSpacer></VerticalSpacer>
-                    <ButtonWithBg buttonText={""} buttonLink={""} icon={true}
-                                  iconDefinition={faPalette} text={false} link={false}/>
+                    <Button buttonText={""} buttonLink={""} icon={true}
+                            iconDefinition={faPalette} text={false} link={false} background={true}
+                            textSize={ButtonSize.small} buttonOnClick={handleColorSelectorClick}/>
 
                 </div>
                 <div className={styles.lineHolder}>
@@ -54,37 +72,40 @@ export default function Navbar() {
                 <div className={styles.mobileNavLeftLine}>
                     <div className={styles.mobileLine}></div>
                 </div>
-                <ButtonWithoutBg buttonText={""} buttonLink={""} icon={true}
-                                 iconDefinition={faBars} text={false} link={false}
-                                 buttonOnClick={handleMobileNavClick}/>
+                <Button buttonText={""} buttonLink={""} icon={true}
+                        iconDefinition={faBars} text={false} link={false}
+                        buttonOnClick={handleMobileNavClick} background={false} textSize={ButtonSize.medium}/>
                 <div className={styles.mobileNavRightLine}>
                     <div className={styles.mobileLine}></div>
                 </div>
             </div>
 
-            <div className={[styles.mobileMenu, mobileMenuEnabled, styles.gradient].join(" ")}>
+            <div className={[styles.mobileMenu, mobileMenuEnabled, gradient].join(" ")}>
                 <div className={styles.mobileMenuNavigation}>
                     <div className={styles.mobileMenuLineHolder}>
                         <div className={styles.mobileMenuLine}></div>
                     </div>
-                    <ButtonWithoutBg buttonText={""} buttonLink={""} icon={true}
-                                     iconDefinition={faX} text={false} link={false}
-                                     buttonOnClick={handleMobileNavClick}/>
+                    <Button buttonText={""} buttonLink={""} icon={true}
+                            iconDefinition={faX} text={false} link={false}
+                            buttonOnClick={handleMobileNavClick} background={false} textSize={ButtonSize.medium}/>
                 </div>
                 <div className={styles.mobileButtons}>
-                    <LinkButtonWithoutBg buttonLink={"/"} buttonText={"Home"}/>
-                    <LinkButtonWithoutBg buttonLink={"/skills"} buttonText={"Skills"}/>
-                    <LinkButtonWithoutBg buttonLink={"/projects"} buttonText={"Projects"}/>
-                    <ButtonWithoutBg buttonText={"Github"} buttonLink={"https://github.com/NoahShomette"} icon={true}
-                                  iconDefinition={faUpRightFromSquare} text={true} link={true}/>
+                    <LinkButton buttonLink={"/"} buttonText={"Home"} background={false} textSize={ButtonSize.medium}/>
+                    <LinkButton buttonLink={"/skills"} buttonText={"Skills"} background={false}
+                                textSize={ButtonSize.medium}/>
+                    <LinkButton buttonLink={"/projects"} buttonText={"Projects"} background={false}
+                                textSize={ButtonSize.medium}/>
+                    <Button buttonText={"Github"} buttonLink={"https://github.com/NoahShomette"} icon={true}
+                            iconDefinition={faUpRightFromSquare} text={true} link={true} background={false}
+                            textSize={ButtonSize.medium}/>
                 </div>
-
-                <div className={styles.colorSelector}>
-
+                <div className={styles.mobileColorSelector}>
+                    <ColorSelector></ColorSelector>
                 </div>
-
             </div>
-
+            <div className={[styles.colorSelector, colorSelectorEnabled].join(" ")}>
+                <ColorSelector></ColorSelector>
+            </div>
         </nav>
     );
 

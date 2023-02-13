@@ -1,0 +1,46 @@
+﻿.button{
+    padding: 10px 20px 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: all 0.3s;
+    display: flex;
+    place-items: center;
+}
+
+.button.background{
+    background-color: var(--color-main-alt);
+}
+
+.button.hovered{
+}
+
+.button.background.hovered{
+    background-color: var(--color-contrast);
+}
+
+.text{
+    font-weight: bold;
+    font-size: 24px;
+    transition: all 0.3s;
+}
+
+.text.extraSmall{
+    font-size: 16px;
+}
+
+.text.small{
+    font-size: 20px;
+}
+
+.text.large{
+    font-size: 28px;
+}
+
+.text.extraLarge{
+    font-size: 32px;
+}
+
+.text.hovered{
+    display: inline-block;
+    color: var(--color-main-alt);
+}

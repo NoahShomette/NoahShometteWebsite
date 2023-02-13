@@ -1,4 +1,4 @@
-﻿import styles from "./VerticalSpacer.module.css";
+import styles from "./VerticalSpacer.module.css";
 
 export default function VerticalSpacer() {
 

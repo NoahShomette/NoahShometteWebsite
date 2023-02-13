@@ -1,7 +1,7 @@
 .navbar {
     display: flex;
     flex-direction: row;
-    margin: 20px 35px 20px 35px;
+    margin: 20px 15px 20px 15px;
 }
 
 .navbar * {
@@ -10,13 +10,18 @@
 
 .name {
     font-weight: 900;
-    font-size: 32px;
+    font-size: 24px;
     line-height: 1.2;
 }
 
 @media screen and (min-width: 800px) {
+    .navbar {
+        display: flex;
+        flex-direction: row;
+        margin: 20px 35px 20px 35px;
+    }
     .name {
-        font-size: 40px;
+        font-size: 28px;
     }
 
 }
@@ -24,6 +29,7 @@
 .rightNav {
     justify-content: end;
     width: 100%;
+    height: 100%;
     margin-right: 0;
     padding-right: 0;
     display: none;
@@ -39,6 +45,7 @@
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
+    margin-bottom: 10px;
 }
 
 .buttons > * {
@@ -50,7 +57,7 @@
     flex-direction: row;
     justify-content: flex-end;
     align-items: center;
-    height: 50%;
+    height: 100%;
 }
 
 .line {
@@ -58,6 +65,23 @@
     content: " ";
     height: 3px;
     width: 90%;
+}
+
+.colorSelector{
+    display: none;
+    position: absolute;
+    right: 50px;
+    top: 100px;
+
+    background-color: var(--color-main-alt);
+    border-radius: 15px;
+    padding: 15px;
+    transition: all 0.3s;
+    box-shadow: -5px 5px 40px rgba(1,1,1,0.5);
+}
+
+.colorSelector.colorSelectorEnabled{
+    display: block;
 }
 
 .mobileRightSide {
@@ -80,8 +104,8 @@
     align-items: center;
     height: 50%;
     width: 60%;
-    margin-right: 10px;
-    margin-left: 40px;
+    margin-right: 0;
+    margin-left: 20px;
 }
 
 .mobileNavRightLine {
@@ -90,7 +114,7 @@
     align-items: center;
     height: 50%;
     width: 10%;
-    margin-left: 10px;
+    margin-left: 0;
 }
 
 .mobileLine {
@@ -103,14 +127,15 @@
 .mobileMenu {
     position: absolute;
     width: 65%;
-    height: 50%;
+    height: auto;
     right: -150px;
     top: 15%;
     display: none;
-    background-color: var(--color-main-alt);
+    background-color: var(--color-main);
     padding: 10px;
     border-radius: 10px;
     transition: all 1s;
+    box-shadow: -5px 5px 40px rgba(1,1,1,0.5);
 }
 
 .mobileMenu.gradient {
@@ -134,7 +159,12 @@
     position: absolute;
     display: block;
     backdrop-filter: blur(5px)
+}
 
+@media screen and (min-width: 1200px) {
+    .mobileBackgroundBlur.mobileMenuEnabled {
+        display: none;
+    }
 }
 
 .mobileMenu.mobileMenuEnabled {
@@ -163,7 +193,7 @@
     align-items: center;
     height: 50%;
     width: 100%;
-    margin-right: 20px;
+    margin-right: 5px;
     margin-left: 20px;
 }
 
@@ -179,4 +209,12 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.mobileColorSelector{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
 }

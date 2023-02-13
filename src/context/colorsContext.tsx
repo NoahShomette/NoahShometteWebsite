@@ -13,12 +13,12 @@ type colorInfo = {
 
 const colorInfoDefault: colorInfo = {
     gradient: true,
-    colorMain: "FCEF04",
-    colorSecondaryGradient: "DC419B",
-    colorMainAlt: "FFC985",
-    colorContrast: "1C1C1C",
-    colorLight: "FFFFFF",
-    colorDark: "1C1C1C",
+    colorMain: "#FCEF04",
+    colorSecondaryGradient: "#DC419B",
+    colorMainAlt: "#FFC985",
+    colorContrast: "#1C1C1C",
+    colorLight: "#FFFFFF",
+    colorDark: "#1C1C1C",
 }
 
 type colorContext = {
@@ -71,17 +71,17 @@ export default function ColorsProvider({children}: Props) {
             document.querySelector(':root')?.classList.remove("gradient");
         }
         document.documentElement.style
-            .setProperty('--color-main', "#" + newColor.colorMain);
+            .setProperty('--color-main', newColor.colorMain);
         document.documentElement.style
-            .setProperty('--color-secondary-gradient', "#" + newColor.colorSecondaryGradient);
+            .setProperty('--color-secondary-gradient', newColor.colorSecondaryGradient);
         document.documentElement.style
-            .setProperty('--color-main-alt', "#" + newColor.colorMainAlt);
+            .setProperty('--color-main-alt', newColor.colorMainAlt);
         document.documentElement.style
-            .setProperty('--color-contrast', "#" + newColor.colorContrast);
+            .setProperty('--color-contrast', newColor.colorContrast);
         document.documentElement.style
-            .setProperty('--color-light', "#" + newColor.colorLight);
+            .setProperty('--color-light', newColor.colorLight);
         document.documentElement.style
-            .setProperty('--color-dark', "#" + newColor.colorDark);
+            .setProperty('--color-dark', newColor.colorDark);
     }
 
     const changeActiveColor = (newColor: colorInfo) => {

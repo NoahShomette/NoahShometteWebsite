@@ -1,12 +1,10 @@
 import React from 'react';
-import ColorSelecter from "../components/colorSelecter";
-import LinkButtonWithBg from "../components/interface/LinkButtonWithBg";
+import LinkButton from "../components/interface/LinkButton";
 
 function FourOhFour() {
     return (
         <>
             <h1>Page not found</h1>
-            <LinkButtonWithBg buttonLink={"/"} buttonText={"Home"}></LinkButtonWithBg>
 
         </>
 

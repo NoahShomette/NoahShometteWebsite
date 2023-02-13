@@ -1,5 +1,4 @@
 ﻿.button {
-    background-color: var(--color-main-alt);
     padding: 10px 20px 10px 20px;
     border-radius: 5px;
     text-decoration: none;
@@ -8,12 +7,16 @@
     transition: all 0.3s;
 }
 
-.button:hover {
-    cursor: pointer;
-    background-color: var(--color-contrast);
+.button.background{
+    background-color: var(--color-main-alt);
 }
 
-.button.hovered {
+.button:hover {
+    cursor: pointer;
+}
+
+.button.background.hovered{
+    background-color: var(--color-contrast);
 }
 
 .icon{
@@ -35,6 +38,22 @@
     font-weight: bold;
     font-size: 24px;
     transition: all 0.3s;
+}
+
+.text.extraSmall{
+    font-size: 16px;
+}
+
+.text.small{
+    font-size: 20px;
+}
+
+.text.large{
+    font-size: 28px;
+}
+
+.text.extraLarge{
+    font-size: 32px;
 }
 
 .text.hovered {
