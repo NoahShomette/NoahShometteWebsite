@@ -1,5 +1,5 @@
 import React, {ReactNode, useContext, useEffect, useState} from "react";
-//import colorsData from "./colors.json";
+import {useCookies} from "react-cookie";
 
 type colorInfo = {
     gradient: boolean,
@@ -50,9 +50,13 @@ type Props = {
 };
 
 export default function ColorsProvider({children}: Props) {
+    const [cookies, setCookie] = useCookies(["activeColor"]);
     const [colorsLoaded, setIsLoaded] = useState<boolean>(false);
     const [activeColor, setColor] = useState<colorInfo>(colorInfoDefault);
 
+    function updateColorCookie(color: colorInfo) {
+        setCookie("activeColor", color, {path: "/"});
+    }
 
     useEffect(() => {
         fetch("colors.json").then(function (res) {
@@ -87,12 +91,14 @@ export default function ColorsProvider({children}: Props) {
     const changeActiveColor = (newColor: colorInfo) => {
         setColor(newColor);
         updateStyles(newColor);
+        updateColorCookie(newColor);
     }
 
-    useEffect(() => {
+    if (cookies.activeColor) {
+        updateStyles(cookies.activeColor);
+    } else {
         updateStyles(colorInfoDefault);
-    }, [])
-
+    }
 
     const value = {
         activeColor,

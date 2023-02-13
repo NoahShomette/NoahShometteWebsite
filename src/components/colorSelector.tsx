@@ -6,6 +6,7 @@ import {ButtonSize} from "../utils/options";
 import {faCircleArrowLeft, faCircleArrowRight} from "@fortawesome/free-solid-svg-icons";
 
 export default function ColorSelector() {
+
     const [colorTab, setColorTab] = useState(0)
     let {colors, changeActiveColor, colorsLoaded} = useColors();
 
