@@ -7,6 +7,7 @@ import {faUpRightFromSquare} from "@fortawesome/free-solid-svg-icons";
 import {ButtonSize} from "../utils/options";
 
 function Index() {
+    /* mobile button stuff - just saving for now
     const [mQuery, setMQuery] = useState({matches: window.innerWidth > 1200});
     
     useEffect(() => {
@@ -15,10 +16,22 @@ function Index() {
 
         return () => mediaQuery.removeEventListener("change", setMQuery);
     }, []);
-
+    
     let showButtons: boolean;
     showButtons = !mQuery.matches;
-    
+        
+        // this stuff goes in the return jsx
+               {showButtons? <div className={styles.mobileButtons}>
+                <LinkButton buttonLink={"/skills"} buttonText={"Skills"} background={true}
+                            textSize={ButtonSize.extraLarge}/>
+                <LinkButton buttonLink={"/projects"} buttonText={"Projects"} background={true}
+                            textSize={ButtonSize.extraLarge}/>
+                <Button buttonText={"Github"} buttonLink={"https://github.com/NoahShomette"} icon={true}
+                        iconDefinition={faUpRightFromSquare} text={true} link={true} background={true}
+                        textSize={ButtonSize.extraLarge} iconSize={"sm"}/>
+            </div> : <div/>}
+     */
+
     return (
         <div className={styles.pageBody}>
             <div className={styles.intro}>
@@ -34,15 +47,6 @@ function Index() {
                     <h1>I’m <span>Noah Shomette</span>, a web developer and indie game dev!</h1>
                 </div>
             </div>
-            {showButtons? <div className={styles.mobileButtons}>
-                <LinkButton buttonLink={"/skills"} buttonText={"Skills"} background={true}
-                            textSize={ButtonSize.extraLarge}/>
-                <LinkButton buttonLink={"/projects"} buttonText={"Projects"} background={true}
-                            textSize={ButtonSize.extraLarge}/>
-                <Button buttonText={"Github"} buttonLink={"https://github.com/NoahShomette"} icon={true}
-                        iconDefinition={faUpRightFromSquare} text={true} link={true} background={true}
-                        textSize={ButtonSize.extraLarge} iconSize={"sm"}/>
-            </div> : <div/>}
             <div className={styles.subline}>
                 <p>I have experience
                     in <span>web</span>, <span>game development</span>, <span>open source software</span>,

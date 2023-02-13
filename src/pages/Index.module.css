@@ -13,15 +13,19 @@
 }
 
 @media screen and (min-width: 800px) {
+    .pageBody{
+        margin: 0 50px 0 50px;
+    }
     .intro  {
-        margin-top: 150px;
+        margin-top: 110px;
+        margin-bottom: 50px;
         flex-direction: row;
     }
 }
 
 @media screen and (min-width: 1200px) {
     .intro  {
-        margin: 100px 0 100px 0;
+        margin: 150px 0 100px 0;
     }
 }
 
@@ -30,6 +34,7 @@
     flex-direction: row;
     place-items: center;
     justify-content: center;
+    margin: 50px 0 50px 0;
 }
 
 .hi {
@@ -66,6 +71,11 @@
 }
 
 @media screen and (min-width: 1200px) {
+    
+    .decoration {
+        margin: 0;
+    }
+    
     .photo *  {
         width: 200px;
         height: 200px;

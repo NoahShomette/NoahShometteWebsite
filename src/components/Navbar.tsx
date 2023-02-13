@@ -36,6 +36,12 @@ export default function Navbar() {
     let gradient = "";
     if (colorContext.activeColor.gradient) {
         gradient = styles.gradient;
+    } else {
+        var elements = document.getElementsByClassName(styles.mobileMenu);
+        
+        if (elements[0] instanceof HTMLElement){
+            elements[0].classList.remove(styles.gradient);
+        }
     }
 
     useEffect(() => {
@@ -46,10 +52,10 @@ export default function Navbar() {
     }, []);
 
     let buttonSize = ButtonSize.extraSmall;
-    
-    if (mQuery.matches){
+
+    if (mQuery.matches) {
         buttonSize = ButtonSize.small;
-    }else {
+    } else {
         buttonSize = ButtonSize.extraSmall;
     }
 

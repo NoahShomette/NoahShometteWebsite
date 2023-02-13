@@ -62,7 +62,6 @@ export default function ColorsProvider({children}: Props) {
         fetch("colors.json").then(function (res) {
             return res.json()
         }).then(function (colorsJson) {
-            console.log(colorsJson);
             colors = colorsJson.colors;
             setIsLoaded(true);
         });
@@ -94,11 +93,15 @@ export default function ColorsProvider({children}: Props) {
         updateColorCookie(newColor);
     }
 
-    if (cookies.activeColor) {
-        updateStyles(cookies.activeColor);
-    } else {
-        updateStyles(colorInfoDefault);
-    }
+    useEffect(() => {
+        if (cookies.activeColor) {
+            updateStyles(cookies.activeColor);
+            setColor(cookies.activeColor)
+        } else {
+            updateStyles(colorInfoDefault);
+        }
+    }, []);
+
 
     const value = {
         activeColor,
