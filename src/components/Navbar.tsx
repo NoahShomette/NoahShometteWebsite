@@ -78,7 +78,7 @@ export default function Navbar() {
                             buttonOnClick={handleMobileNavClick} background={false} textSize={ButtonSize.medium}
                             iconSize={"xl"}/>
                 </div>
-                
+
                 <div className={styles.mobileNavRightLine}>
                     <div className={styles.mobileLine}></div>
                 </div>
@@ -95,7 +95,7 @@ export default function Navbar() {
                                 buttonOnClick={handleMobileNavClick} background={false} textSize={ButtonSize.medium}
                                 iconSize={"lg"}/>
                     </div>
-                   
+
                 </div>
                 <div className={styles.mobileButtons}>
                     <LinkButton buttonLink={"/"} buttonText={"Home"} background={false} textSize={ButtonSize.medium}/>
@@ -110,6 +110,7 @@ export default function Navbar() {
                 <div className={styles.mobileColorSelector}>
                     <ColorSelector></ColorSelector>
                 </div>
+                
             </div>
             <div className={[styles.colorSelector, colorSelectorEnabled].join(" ")}>
                 <ColorSelector></ColorSelector>

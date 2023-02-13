@@ -47,13 +47,13 @@ export default function ColorSelector() {
             <div className={styles.navigation}>
                 <Button text={false} buttonText={""} link={false} buttonLink={""} icon={true}
                         iconDefinition={faCircleArrowLeft} background={false} textSize={ButtonSize.medium}
-                        iconSize={"xl"} buttonOnClick={handleTabLeft}/>
+                        iconSize={"2x"} buttonOnClick={handleTabLeft}/>
                 <div className={styles.dotHolder}>
                     {getTabDots(colorTab)}
                 </div>
                 <Button text={false} buttonText={""} link={false} buttonLink={""} icon={true}
                         iconDefinition={faCircleArrowRight} background={false} textSize={ButtonSize.medium}
-                        iconSize={"xl"} buttonOnClick={handleTabRight}/>
+                        iconSize={"2x"} buttonOnClick={handleTabRight}/>
             </div>
         )
     }

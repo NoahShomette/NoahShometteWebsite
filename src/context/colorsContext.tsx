@@ -55,7 +55,7 @@ export default function ColorsProvider({children}: Props) {
     const [activeColor, setColor] = useState<colorInfo>(colorInfoDefault);
 
     function updateColorCookie(color: colorInfo) {
-        setCookie("activeColor", color, {path: "/"});
+        setCookie("activeColor", color, {path: "/", expires: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000)});
     }
 
     useEffect(() => {
