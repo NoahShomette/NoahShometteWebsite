@@ -1,3 +1,5 @@
+// noinspection SpellCheckingInspection
+
 import {useColors} from "../context/colorsContext";
 import styles from "./colorSelector.module.css";
 import {ReactNode, useState} from "react";
@@ -13,6 +15,10 @@ export default function ColorSelector() {
 
     let tabCount = colorsLoaded ? Math.floor(colors.length / 4) : 0;
 
+    if (colorsLoaded && colors.length % 4 === 0) {
+        tabCount = tabCount - 1;
+    }
+    
     const handleTabLeft = () => {
         if (colorTab > 0) {
             setColorTab(colorTab - 1);
@@ -29,6 +35,7 @@ export default function ColorSelector() {
         let content: ReactNode[] = [];
 
         for (let i = 0; i <= tabCount; i++) {
+
             if (i === colorTab) {
                 content.push(<div className={[styles.dot, styles.dotActive].join(" ")} key={uuidv4()}></div>)
             } else {
