@@ -13,10 +13,11 @@
 }
 
 @media screen and (min-width: 800px) {
-    .pageBody{
+    .pageBody {
         margin: 0 50px 0 50px;
     }
-    .intro  {
+
+    .intro {
         margin-top: 110px;
         margin-bottom: 50px;
         flex-direction: row;
@@ -24,7 +25,7 @@
 }
 
 @media screen and (min-width: 1200px) {
-    .intro  {
+    .intro {
         margin: 150px 0 100px 0;
     }
 }
@@ -71,18 +72,18 @@
 }
 
 @media screen and (min-width: 1200px) {
-    
+
     .decoration {
         margin: 0;
     }
-    
-    .photo *  {
+
+    .photo * {
         width: 200px;
         height: 200px;
         border: 15px solid var(--color-light);
     }
 
-    .hi{
+    .hi {
         width: 100px;
         height: 100px;
         font-size: 100px;
@@ -96,7 +97,6 @@
     display: flex;
     justify-content: center;
     place-items: center;
-    padding-left: 25px;
 }
 
 .header h1 {
@@ -117,6 +117,10 @@
 
 @media screen and (min-width: 800px) {
 
+    .header {
+        padding-left: 25px;
+    }
+
     .header h1 {
         font-size: 38px;
         font-weight: 500;
@@ -124,8 +128,8 @@
         margin: 0;
 
     }
-    
-    .subline  {
+
+    .subline {
         display: block;
     }
 }
@@ -140,10 +144,10 @@
     font-weight: 900;
 }
 
-.mobileButtons{
+.mobileButtons {
     width: 100%;
 }
 
-.mobileButtons a{
+.mobileButtons a {
     margin: 20px;
 }
