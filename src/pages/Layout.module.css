@@ -19,6 +19,7 @@
 
 @media screen and (min-width: 800px) {
     .bee {
+        top: 0;
         right: 500px;
     }
 }
@@ -29,6 +30,7 @@
         justify-content: center;
         align-items: center;
     }
+
     .bee {
         right: auto;
         margin-right: 200px;
