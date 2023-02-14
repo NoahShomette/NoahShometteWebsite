@@ -24,6 +24,7 @@
 
 .button.background.hovered{
     background-color: var(--color-contrast);
+    transform: scale(110%);
 }
 
 .text{

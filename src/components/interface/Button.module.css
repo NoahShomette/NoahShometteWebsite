@@ -7,6 +7,10 @@
     transition: all 0.3s;
 }
 
+.hovered {
+    transition: all 0.3s;
+}
+
 .button * {
 }
 
@@ -19,8 +23,13 @@
     cursor: pointer;
 }
 
+.button.hovered {
+    
+}
+
 .button.background.hovered {
     background-color: var(--color-contrast);
+    transform: scale(110%);
 }
 
 .icon {
