@@ -7,7 +7,8 @@
 }
 
 .bee {
-    right: 380px;
+    top: -100px;
+    right: 350px;
     position: absolute;
     height: 600px;
     color: var(--color-main-alt);
@@ -19,5 +20,17 @@
 @media screen and (min-width: 800px) {
     .bee {
         right: 500px;
+    }
+}
+
+@media screen and (min-width: 1921px) {
+    .beeHolder {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .bee {
+        right: auto;
+        margin-right: 200px;
     }
 }
