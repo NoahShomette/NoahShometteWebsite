@@ -1,10 +1,5 @@
-import React, {useEffect, useState} from 'react';
 import styles from "./Index.module.css";
 import photo from "../resources/NoahShometteMainPic.jpeg";
-import LinkButton from "../components/interface/LinkButton";
-import Button from "../components/interface/Button";
-import {faUpRightFromSquare} from "@fortawesome/free-solid-svg-icons";
-import {ButtonSize} from "../utils/options";
 
 function Index() {
     /* mobile button stuff - just saving for now
