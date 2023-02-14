@@ -17,7 +17,7 @@ import {
     faCircleArrowLeft,
     faCircleArrowRight
 } from "@fortawesome/free-solid-svg-icons";
-import FourOhFour from "./pages/FourOhFour";
+import FourOhFour from "./pages/404";
 import {CookiesProvider} from "react-cookie";
 
 library.add(fab, faUpRightFromSquare, faPlus, faX, faPalette, faBars, faCircleArrowLeft, faCircleArrowRight)
@@ -32,7 +32,7 @@ function App() {
                             <Route index element={<Index/>}></Route>
                             <Route path="skills" element={<Skills/>}></Route>
                             <Route path="projects" element={<Projects/>}></Route>
-                            <Route path="*" element={<FourOhFour/>}></Route>
+                            <Route path="/*" element={<FourOhFour/>}></Route>
                         </Route>
                     </Routes>
                 </BrowserRouter>

@@ -56,7 +56,7 @@ export default function LinkButtonWithBg(props: ButtonProps) {
     return (
 
         <Link className={[styles.button, buttonStyles].join(" ")} to={props.buttonLink} onMouseEnter={handleMouseEnter}
-              onMouseLeave={handleMouseLeave}>
+              onMouseLeave={handleMouseLeave} onClick={props.buttonOnClick}>
             <div className={[styles.text, textStyles].join(" ")}>{props.buttonText}</div>
         </Link>
 

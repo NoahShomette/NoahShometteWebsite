@@ -38,8 +38,8 @@ export default function Navbar() {
         gradient = styles.gradient;
     } else {
         var elements = document.getElementsByClassName(styles.mobileMenu);
-        
-        if (elements[0] instanceof HTMLElement){
+
+        if (elements[0] instanceof HTMLElement) {
             elements[0].classList.remove(styles.gradient);
         }
     }
@@ -51,7 +51,7 @@ export default function Navbar() {
         return () => mediaQuery.removeEventListener("change", setMQuery);
     }, []);
 
-    let buttonSize = ButtonSize.extraSmall;
+    let buttonSize: ButtonSize;
 
     if (mQuery.matches) {
         buttonSize = ButtonSize.small;
@@ -121,11 +121,12 @@ export default function Navbar() {
 
                 </div>
                 <div className={styles.mobileButtons}>
-                    <LinkButton buttonLink={"/"} buttonText={"Home"} background={false} textSize={ButtonSize.medium}/>
+                    <LinkButton buttonLink={"/"} buttonText={"Home"} background={false} textSize={ButtonSize.medium}
+                                buttonOnClick={handleMobileNavClick}/>
                     <LinkButton buttonLink={"/skills"} buttonText={"Skills"} background={false}
-                                textSize={ButtonSize.medium}/>
+                                textSize={ButtonSize.medium} buttonOnClick={handleMobileNavClick}/>
                     <LinkButton buttonLink={"/projects"} buttonText={"Projects"} background={false}
-                                textSize={ButtonSize.medium}/>
+                                textSize={ButtonSize.medium} buttonOnClick={handleMobileNavClick}/>
                     <Button buttonText={"Github"} buttonLink={"https://github.com/NoahShomette"} icon={true}
                             iconDefinition={faUpRightFromSquare} text={true} link={true} background={false}
                             textSize={ButtonSize.medium} iconSize={"lg"}/>

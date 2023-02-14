@@ -24,7 +24,6 @@
 }
 
 .button.hovered {
-    
 }
 
 .button.background.hovered {
@@ -79,4 +78,6 @@
 .text.hovered {
     display: inline-block;
     color: var(--color-main-alt);
+    transform: scale(110%);
+
 }

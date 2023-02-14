@@ -52,4 +52,5 @@
 .text.hovered{
     display: inline-block;
     color: var(--color-main-alt);
+    transform: scale(110%);
 }

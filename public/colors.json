@@ -37,12 +37,12 @@
       "colorDark": "#1C1C1C"
     },
     {
-      "gradient": false,
-      "colorMain": "#FFD400",
-      "colorSecondaryGradient": "#468132",
-      "colorMainAlt": "#D6B200",
+      "gradient": true,
+      "colorMain": "#EF566A",
+      "colorSecondaryGradient": "#627AF7",
+      "colorMainAlt": "#EF93FB",
       "colorContrast": "#1C1C1C",
-      "colorLight": "#FFFFFF",
+      "colorLight": "#DBDBDB",
       "colorDark": "#1C1C1C"
     }
   ]
