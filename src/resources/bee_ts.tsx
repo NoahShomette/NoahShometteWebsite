@@ -1,4 +1,4 @@
-﻿import * as React from "react"
+import * as React from "react"
 
 const BeeComponent = (props: JSX.IntrinsicAttributes & React.SVGProps<SVGSVGElement>) => (
     <svg
