@@ -1,0 +1,9 @@
+﻿.bee {
+    top: 0px;
+    position: absolute;
+    height: 600px;
+    color: var(--color-main-alt);
+    scale: 180%;
+    overflow: hidden;
+    z-index: -100;
+}

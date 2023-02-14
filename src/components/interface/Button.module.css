@@ -7,10 +7,10 @@
     transition: all 0.3s;
 }
 
-.button *{
+.button * {
 }
 
-.button.background{
+.button.background {
     padding: 10px 20px 10px 20px;
     background-color: var(--color-main-alt);
 }
@@ -19,16 +19,20 @@
     cursor: pointer;
 }
 
-.button.background.hovered{
+.button.background.hovered {
     background-color: var(--color-contrast);
 }
 
-.icon{
+.icon {
+    transition: all 0.3s;
+}
+
+.icon.hovered {
+    transform: scale(120%);
 }
 
 .icon * {
     color: var(--color-contrast);
-    transition: all 0.3s;
 }
 
 .icon.hovered.background * {
@@ -47,19 +51,19 @@
 
 }
 
-.text.extraSmall{
+.text.extraSmall {
     font-size: 16px;
 }
 
-.text.small{
+.text.small {
     font-size: 20px;
 }
 
-.text.large{
+.text.large {
     font-size: 28px;
 }
 
-.text.extraLarge{
+.text.extraLarge {
     font-size: 32px;
 }
 
