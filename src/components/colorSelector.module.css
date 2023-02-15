@@ -28,8 +28,11 @@
 }
 
 .dot.dotActive {
-    width: 20px;
-    height: 20px;
+    transform: scale(200%);
+}
+
+.swatches {
+    margin-top: 20px;
 }
 
 .swatchGroup {
@@ -45,7 +48,7 @@
     transition: all 0.3s;
 }
 
-.swatchGroup:hover{
+.swatchGroup:hover {
     transform: translateX(5px);
 }
 

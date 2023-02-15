@@ -11,7 +11,7 @@ import {v4 as uuidv4} from "uuid";
 export default function ColorSelector() {
 
     const [colorTab, setColorTab] = useState(0)
-    let {colors, changeActiveColor, colorsLoaded} = useColors();
+    let {colors, changeActiveColor, colorsLoaded, activeColor} = useColors();
 
     let tabCount = colorsLoaded ? Math.floor(colors.length / 4) : 0;
 
@@ -37,9 +37,9 @@ export default function ColorSelector() {
         for (let i = 0; i <= tabCount; i++) {
 
             if (i === colorTab) {
-                content.push(<div className={[styles.dot, styles.dotActive].join(" ")} key={3}></div>)
+                content.push(<div className={[styles.dot, styles.dotActive].join(" ")} key={3 + i * 10}></div>)
             } else {
-                content.push(<div className={styles.dot} key={4}></div>)
+                content.push(<div className={styles.dot} key={3 + i * 10}></div>)
             }
         }
 
@@ -55,13 +55,15 @@ export default function ColorSelector() {
             <div className={styles.navigation} key={2}>
                 <Button text={false} buttonText={""} link={false} buttonLink={""} icon={true}
                         iconDefinition={faCircleArrowLeft} background={false} textSize={ButtonSize.medium}
-                        iconSize={"2x"} buttonOnClick={handleTabLeft}/>
+                        iconSize={"2x"} buttonOnClick={handleTabLeft} iconColor={activeColor.colorDark}
+                        iconHover={activeColor.colorContrast}/>
                 <div className={styles.dotHolder}>
                     {getTabDots(colorTab)}
                 </div>
                 <Button text={false} buttonText={""} link={false} buttonLink={""} icon={true}
                         iconDefinition={faCircleArrowRight} background={false} textSize={ButtonSize.medium}
-                        iconSize={"2x"} buttonOnClick={handleTabRight}/>
+                        iconSize={"2x"} buttonOnClick={handleTabRight} iconColor={activeColor.colorDark}
+                        iconHover={activeColor.colorContrast}/>
             </div>
         )
     }
@@ -87,7 +89,7 @@ export default function ColorSelector() {
         if (colorsLoaded) {
             let color = colors[index];
             return (
-                <div className={styles.swatchGroup} onClick={() => changeActiveColor(colors[index])} key={1}>
+                <div className={styles.swatchGroup} onClick={() => changeActiveColor(colors[index])} key={index}>
                     {color.gradient ? <div
                             style={{background: "linear-gradient(120deg, " + color.colorMain + " 0%, " + color.colorSecondaryGradient + " 100%)"}}
                             className={styles.swatch}></div>

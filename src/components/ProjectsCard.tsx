@@ -15,6 +15,10 @@ interface cardProps {
     websiteLink?: string;
     websiteName?: string;
 
+    bulletPointOne?: string;
+    bulletPointTwo?: string;
+    bulletPointThree?: string;
+
 }
 
 export default function ProjectsCard(props: cardProps) {
@@ -28,7 +32,8 @@ export default function ProjectsCard(props: cardProps) {
                     <Button buttonText={"Github"} buttonLink={props.githubLink} icon={true}
                             iconDefinition={faGithub} text={true} link={true} background={false}
                             textSize={ButtonSize.extraSmall} iconSize={"1x"} textColor={colors.activeColor.colorDark}
-                            iconColor={colors.activeColor.colorDark}/>
+                            iconColor={colors.activeColor.colorDark} textHover={colors.activeColor.colorDark}
+                            iconHover={colors.activeColor.colorDark}/>
                 </div> : <></>}
             </>
 
@@ -43,7 +48,8 @@ export default function ProjectsCard(props: cardProps) {
                     <Button buttonText={props.websiteName || ""} buttonLink={props.websiteLink} icon={true}
                             iconDefinition={faGlobe} text={true} link={true} background={false}
                             textSize={ButtonSize.extraSmall} iconSize={"sm"} textColor={colors.activeColor.colorDark}
-                            iconColor={colors.activeColor.colorDark}/>
+                            iconColor={colors.activeColor.colorDark} textHover={colors.activeColor.colorDark}
+                            iconHover={colors.activeColor.colorDark}/>
                 </div> : <></>}
             </>
         )
@@ -55,6 +61,11 @@ export default function ProjectsCard(props: cardProps) {
             <div className={styles.description}>{props.projectDescription}</div>
             <div className={styles.photo}>
                 <img src={props.projectPhotoPath} alt={props.photoAlt}/>
+            </div>
+            <div className={styles.bulletPoints}>
+                {props.bulletPointOne ? <div>{props.bulletPointOne}</div> : ""}
+                {props.bulletPointTwo ? <div>{props.bulletPointTwo}</div> : ""}
+                {props.bulletPointThree ? <div>{props.bulletPointThree}</div> : ""}
             </div>
             <div className={styles.buttons}>
                 {getGithub()}

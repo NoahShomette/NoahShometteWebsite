@@ -9,10 +9,15 @@ import {useColors} from "../../context/colorsContext";
 
 
 interface ButtonProps {
+    //Specify if this button has text
     text: boolean;
+    //specify what the text size is
     textSize: ButtonSize;
+    // specify what the button text is
     buttonText: string;
+    // change the text color, defaults to --color-contrast
     textColor?: string;
+    // change the text color on hover, defaults to --color-main-alt
     textHover?: string;
 
     link: boolean;
@@ -54,9 +59,12 @@ export default function Button(props: ButtonProps) {
     if (hovered) {
         buttonStyles = buttonStyles + " " + styles.hovered;
         textStyles = textStyles + " " + styles.hovered;
-        if (props.backgroundHover) backgroundColor = props.backgroundHover;
-        if (props.textHover) textColor = props.textHover;
-        if (props.iconHover) iconColor = props.iconHover;
+        if (props.background) {
+            backgroundColor = props.backgroundHover ? props.backgroundHover : colors.activeColor.colorContrast;
+        }
+        textColor = props.textHover ? props.textHover : colors.activeColor.colorMainAlt;
+        iconColor = props.iconHover ? props.iconHover : colors.activeColor.colorMainAlt;
+
     }
 
     if (props.background) {
