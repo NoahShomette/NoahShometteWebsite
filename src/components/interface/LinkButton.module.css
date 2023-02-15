@@ -20,11 +20,11 @@
 }
 
 .button.hovered{
+    transform: scale(110%);
 }
 
 .button.background.hovered{
     background-color: var(--color-contrast);
-    transform: scale(110%);
 }
 
 .text{
@@ -52,5 +52,4 @@
 .text.hovered{
     display: inline-block;
     color: var(--color-main-alt);
-    transform: scale(110%);
 }

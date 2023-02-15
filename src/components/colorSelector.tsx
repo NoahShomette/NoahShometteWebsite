@@ -18,7 +18,7 @@ export default function ColorSelector() {
     if (colorsLoaded && colors.length % 4 === 0) {
         tabCount = tabCount - 1;
     }
-    
+
     const handleTabLeft = () => {
         if (colorTab > 0) {
             setColorTab(colorTab - 1);
@@ -37,9 +37,9 @@ export default function ColorSelector() {
         for (let i = 0; i <= tabCount; i++) {
 
             if (i === colorTab) {
-                content.push(<div className={[styles.dot, styles.dotActive].join(" ")} key={uuidv4()}></div>)
+                content.push(<div className={[styles.dot, styles.dotActive].join(" ")} key={3}></div>)
             } else {
-                content.push(<div className={styles.dot} key={uuidv4()}></div>)
+                content.push(<div className={styles.dot} key={4}></div>)
             }
         }
 
@@ -52,7 +52,7 @@ export default function ColorSelector() {
     function getNavigation() {
 
         return (
-            <div className={styles.navigation} key={uuidv4()}>
+            <div className={styles.navigation} key={2}>
                 <Button text={false} buttonText={""} link={false} buttonLink={""} icon={true}
                         iconDefinition={faCircleArrowLeft} background={false} textSize={ButtonSize.medium}
                         iconSize={"2x"} buttonOnClick={handleTabLeft}/>
@@ -87,7 +87,7 @@ export default function ColorSelector() {
         if (colorsLoaded) {
             let color = colors[index];
             return (
-                <div className={styles.swatchGroup} onClick={() => changeActiveColor(colors[index])} key={uuidv4()}>
+                <div className={styles.swatchGroup} onClick={() => changeActiveColor(colors[index])} key={1}>
                     {color.gradient ? <div
                             style={{background: "linear-gradient(120deg, " + color.colorMain + " 0%, " + color.colorSecondaryGradient + " 100%)"}}
                             className={styles.swatch}></div>
@@ -105,7 +105,7 @@ export default function ColorSelector() {
 
     return (
         <>
-            <div className={styles.body} key={uuidv4()}>
+            <div className={styles.body} key={0}>
                 {getNavigation()}
                 <div className={styles.swatches}>
                     {getSwatches()}

@@ -3,7 +3,7 @@ import './App.css';
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 import Layout from "./pages/Layout";
 import Index from "./pages/Index";
-import Skills from "./pages/Skills";
+import AboutMe from "./pages/AboutMe";
 import Projects from "./pages/Projects";
 import ColorsProvider from "./context/colorsContext";
 import {library} from '@fortawesome/fontawesome-svg-core'
@@ -15,12 +15,13 @@ import {
     faPalette,
     faBars,
     faCircleArrowLeft,
-    faCircleArrowRight
+    faCircleArrowRight,
+    faGlobe,
 } from "@fortawesome/free-solid-svg-icons";
 import FourOhFour from "./pages/404";
 import {CookiesProvider} from "react-cookie";
 
-library.add(fab, faUpRightFromSquare, faPlus, faX, faPalette, faBars, faCircleArrowLeft, faCircleArrowRight)
+library.add(fab, faUpRightFromSquare, faPlus, faX, faPalette, faBars, faCircleArrowLeft, faCircleArrowRight, faGlobe)
 
 function App() {
     return (
@@ -30,7 +31,7 @@ function App() {
                     <Routes>
                         <Route path="/" element={<Layout/>}>
                             <Route index element={<Index/>}></Route>
-                            <Route path="skills" element={<Skills/>}></Route>
+                            <Route path="aboutme" element={<AboutMe/>}></Route>
                             <Route path="projects" element={<Projects/>}></Route>
                             <Route path="/*" element={<FourOhFour/>}></Route>
                         </Route>

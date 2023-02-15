@@ -69,7 +69,7 @@ export default function Navbar() {
             <div className={styles.rightNav}>
                 <div className={styles.buttons}>
                     <LinkButton buttonLink={"/"} buttonText={"Home"} background={true} textSize={buttonSize}/>
-                    <LinkButton buttonLink={"/skills"} buttonText={"Skills"} background={true}
+                    <LinkButton buttonLink={"/aboutme"} buttonText={"About Me"} background={true}
                                 textSize={buttonSize}/>
                     <LinkButton buttonLink={"/projects"} buttonText={"Projects"} background={true}
                                 textSize={buttonSize}/>
@@ -123,7 +123,7 @@ export default function Navbar() {
                 <div className={styles.mobileButtons}>
                     <LinkButton buttonLink={"/"} buttonText={"Home"} background={false} textSize={ButtonSize.medium}
                                 buttonOnClick={handleMobileNavClick}/>
-                    <LinkButton buttonLink={"/skills"} buttonText={"Skills"} background={false}
+                    <LinkButton buttonLink={"/aboutme"} buttonText={"About Me"} background={false}
                                 textSize={ButtonSize.medium} buttonOnClick={handleMobileNavClick}/>
                     <LinkButton buttonLink={"/projects"} buttonText={"Projects"} background={false}
                                 textSize={ButtonSize.medium} buttonOnClick={handleMobileNavClick}/>

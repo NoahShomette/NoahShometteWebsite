@@ -24,11 +24,11 @@
 }
 
 .button.hovered {
+    transform: scale(110%);
 }
 
 .button.background.hovered {
     background-color: var(--color-contrast);
-    transform: scale(110%);
 }
 
 .icon {
@@ -40,11 +40,11 @@
 }
 
 .icon * {
-    color: var(--color-contrast);
+    color: currentColor;
 }
 
 .icon.hovered.background * {
-    color: var(--color-main-alt);
+    color: currentColor;
 }
 
 .spacer {
@@ -78,6 +78,4 @@
 .text.hovered {
     display: inline-block;
     color: var(--color-main-alt);
-    transform: scale(110%);
-
 }

@@ -1,0 +1,89 @@
+﻿.pageBody {
+    color: var(--color-contrast);
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+}
+
+.pageIntro {
+    display: flex;
+    flex-direction: column;
+    margin: 25px 50px 25px 50px;
+    max-width: 1200px;
+}
+
+.pageIntro h1 {
+    font-size: 24px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-align: center;
+    max-width: 800px;
+}
+
+.pageIntro span {
+    font-weight: 900;
+}
+
+@media screen and (min-width: 800px) {
+    .pageBody {
+        margin: 0 50px 0 50px;
+    }
+
+    .pageIntro {
+        margin: 25px 50px 50px 50px;
+    }
+
+    .pageIntro h1 {
+        font-size: 28px;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+}
+
+.projectss {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+}
+
+.projects {
+    display: flex;
+    flex-direction: row;
+    flex-flow: wrap;
+    justify-content: center;
+}
+
+
+.projects > div {
+    margin: 30px 20px;
+}
+
+.card {
+    transition: all 0.3s;
+}
+
+.card:hover > div {
+    box-shadow: 5px 5px 40px rgba(1, 1, 1, 1);
+}
+
+@media screen and (min-width: 800px) {
+    .projectss {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+
+    .projects {
+        display: flex;
+        flex-flow: wrap;
+    }
+
+    .projects > div {
+        margin: 20px 20px;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .projectss {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}

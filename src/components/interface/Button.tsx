@@ -5,23 +5,35 @@ import {IconDefinition} from "@fortawesome/free-brands-svg-icons";
 import {SizeProp} from "@fortawesome/fontawesome-svg-core";
 import {ButtonSize} from "../../utils/options";
 import {v4 as uuidv4} from 'uuid';
+import {useColors} from "../../context/colorsContext";
 
 
 interface ButtonProps {
     text: boolean;
+    textSize: ButtonSize;
     buttonText: string;
+    textColor?: string;
+    textHover?: string;
+
     link: boolean;
     buttonLink: string;
 
     icon: boolean;
     iconDefinition: IconDefinition;
     iconSize: SizeProp;
-    buttonOnClick?: React.MouseEventHandler;
+    iconColor?: string;
+    iconHover?: string;
+
     background: boolean;
-    textSize: ButtonSize;
+    backgroundColor?: string;
+    backgroundHover?: string;
+
+    buttonOnClick?: React.MouseEventHandler;
+
 }
 
 export default function Button(props: ButtonProps) {
+    let colors = useColors();
 
     const [hovered, setHovered] = useState(false);
 
@@ -35,10 +47,16 @@ export default function Button(props: ButtonProps) {
 
     let buttonStyles = "";
     let textStyles = "";
+    let backgroundColor = props.backgroundColor ? props.backgroundColor : colors.activeColor.colorMainAlt;
+    let textColor = props.textColor ? props.textColor : colors.activeColor.colorContrast;
+    let iconColor = props.iconColor ? props.iconColor : colors.activeColor.colorContrast;
 
     if (hovered) {
         buttonStyles = buttonStyles + " " + styles.hovered;
         textStyles = textStyles + " " + styles.hovered;
+        if (props.backgroundHover) backgroundColor = props.backgroundHover;
+        if (props.textHover) textColor = props.textHover;
+        if (props.iconHover) iconColor = props.iconHover;
     }
 
     if (props.background) {
@@ -67,13 +85,17 @@ export default function Button(props: ButtonProps) {
             return (
                 <a href={props.buttonLink} className={[styles.button, buttonStyles].join(" ")}
                    onMouseEnter={handleMouseEnter}
-                   onMouseLeave={handleMouseLeave} onClick={props.buttonOnClick}>
+                   onMouseLeave={handleMouseLeave} onClick={props.buttonOnClick}
+                   {...props.background ? {style: {backgroundColor: backgroundColor}} : undefined}
+                >
                     {getContent()}
                 </a>
             )
         } else {
             return (<div className={[styles.button, buttonStyles].join(" ")} onMouseEnter={handleMouseEnter}
-                         onMouseLeave={handleMouseLeave} onClick={props.buttonOnClick}>
+                         onMouseLeave={handleMouseLeave} onClick={props.buttonOnClick}
+                         {...props.background ? {style: {backgroundColor: backgroundColor}} : undefined}
+            >
                 {getContent()}
             </div>)
         }
@@ -86,7 +108,7 @@ export default function Button(props: ButtonProps) {
         if (props.icon) {
             content.push(<div key={0}>
                 <FontAwesomeIcon icon={props.iconDefinition} className={[styles.icon, buttonStyles].join(" ")}
-                                 size={props.iconSize}/>
+                                 size={props.iconSize} style={{color: iconColor}}/>
             </div>)
         }
 
@@ -98,7 +120,8 @@ export default function Button(props: ButtonProps) {
 
         if (props.text) {
             content.push(
-                <div className={[styles.text, textStyles].join(" ")} key={2}>{props.buttonText}</div>
+                <div className={[styles.text, textStyles].join(" ")} key={2}
+                     style={{color: textColor}}>{props.buttonText}</div>
             )
         }
 
