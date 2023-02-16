@@ -52,7 +52,7 @@ type Props = {
 export default function ColorsProvider({children}: Props) {
     const [cookies, setCookie] = useCookies(["activeColor"]);
     const [colorsLoaded, setIsLoaded] = useState<boolean>(false);
-    const [activeColor, setColor] = useState<colorInfo>(colorInfoDefault);
+    const [activeColor, setColor] = useState<colorInfo>(cookies.activeColor ? cookies.activeColor : colorInfoDefault);
 
     function updateColorCookie(color: colorInfo) {
         setCookie("activeColor", color, {path: "/", expires: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000)});
@@ -94,12 +94,8 @@ export default function ColorsProvider({children}: Props) {
     }
 
     useEffect(() => {
-        if (cookies.activeColor) {
-            updateStyles(cookies.activeColor);
-            setColor(cookies.activeColor)
-        } else {
-            updateStyles(colorInfoDefault);
-        }
+        updateStyles(activeColor);
+        setColor(activeColor)
     }, []);
 
 
