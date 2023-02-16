@@ -9,22 +9,16 @@
 
 
 .button *{
-    color: var(--color-contrast);
     text-decoration: none;
 }
 
 
 .button.background{
     padding: 10px 20px 10px 20px;
-    background-color: var(--color-main-alt);
 }
 
 .button.hovered{
     transform: scale(110%);
-}
-
-.button.background.hovered{
-    background-color: var(--color-contrast);
 }
 
 .text{
@@ -51,5 +45,4 @@
 
 .text.hovered{
     display: inline-block;
-    color: var(--color-main-alt);
 }

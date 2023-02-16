@@ -96,7 +96,7 @@ export default function ColorsProvider({children}: Props) {
     useEffect(() => {
         updateStyles(activeColor);
         setColor(activeColor)
-    }, []);
+    });
 
 
     const value = {

@@ -2,16 +2,27 @@ import {Link} from "react-router-dom";
 import styles from "../interface/LinkButton.module.css";
 import {useState} from "react";
 import {ButtonSize} from "../../utils/options";
+import {useColors} from "../../context/colorsContext";
 
 interface ButtonProps {
     buttonText: string;
-    buttonLink: string;
-    buttonOnClick?: React.MouseEventHandler
-    background: boolean;
     textSize: ButtonSize;
+    buttonLink: string;
+    // change the text color, defaults to --color-contrast
+    textColor?: string;
+    // change the text color on hover, defaults to --color-main-alt
+    textHover?: string;
+
+    background: boolean;
+    backgroundColor?: string;
+    backgroundHover?: string;
+
+    buttonOnClick?: React.MouseEventHandler
+
 }
 
 export default function LinkButtonWithBg(props: ButtonProps) {
+    let colors = useColors();
 
     const [hovered, setHovered] = useState(false);
 
@@ -25,10 +36,16 @@ export default function LinkButtonWithBg(props: ButtonProps) {
 
     let buttonStyles = "";
     let textStyles = "";
+    let backgroundColor = props.backgroundColor ? props.backgroundColor : colors.activeColor.colorMainAlt;
+    let textColor = props.textColor ? props.textColor : colors.activeColor.colorContrast;
 
     if (hovered) {
         buttonStyles = buttonStyles + " " + styles.hovered;
         textStyles = textStyles + " " + styles.hovered;
+        if (props.background) {
+            backgroundColor = props.backgroundHover ? props.backgroundHover : colors.activeColor.colorContrast;
+        }
+        textColor = props.textHover ? props.textHover : colors.activeColor.colorMainAlt;
     }
 
     if (props.background) {
@@ -56,8 +73,9 @@ export default function LinkButtonWithBg(props: ButtonProps) {
     return (
 
         <Link className={[styles.button, buttonStyles].join(" ")} to={props.buttonLink} onMouseEnter={handleMouseEnter}
-              onMouseLeave={handleMouseLeave} onClick={props.buttonOnClick}>
-            <div className={[styles.text, textStyles].join(" ")}>{props.buttonText}</div>
+              onMouseLeave={handleMouseLeave}
+              onClick={props.buttonOnClick} {...props.background ? {style: {backgroundColor: backgroundColor}} : undefined}>
+            <div className={[styles.text, textStyles].join(" ")} style={{color: textColor}}>{props.buttonText}</div>
         </Link>
 
     )
