@@ -1,4 +1,4 @@
-import React, {ReactNode, useContext, useEffect, useState} from "react";
+import React, {ReactNode, useContext, useEffect, useLayoutEffect, useState} from "react";
 import {useCookies} from "react-cookie";
 
 type colorInfo = {
@@ -93,7 +93,7 @@ export default function ColorsProvider({children}: Props) {
         updateColorCookie(newColor);
     }
 
-    useEffect(() => {
+    useLayoutEffect(() => {
         updateStyles(activeColor);
         setColor(activeColor)
     });

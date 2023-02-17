@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap');
 
 :root {
-    --color-main: #FCEF04;
+    --color-main: black;
     --color-secondary-gradient: #DC419B;
     --color-main-alt: #FFC985;
     --color-contrast: #1C1C1C;
@@ -9,7 +9,7 @@
     --color-dark: #1C1C1C;
     background-color: var(--color-main);
     color: black;
-    
+
     --small-desktop-bp: 800px;
     --desktop-bp: 1200px;
 }
