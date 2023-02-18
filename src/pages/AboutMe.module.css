@@ -1,0 +1,157 @@
+﻿.pageBody {
+    color: var(--color-contrast);
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+
+    --border-radius: 20px;
+}
+
+
+@media screen and (min-width: 800px) {
+    .pageBody {
+        margin: 0 50px 0 50px;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+
+}
+
+.bioHolder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.bioBox {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 25px;
+    margin: 30px 30px 30px 30px;
+    background-color: var(--color-main-alt);
+    max-width: 700px;
+    border-radius: var(--border-radius);
+    box-shadow: 5px 5px 5px rgba(1, 1, 1, 0.5);
+}
+
+@media screen and (min-width: 800px) {
+    .bioHolder {
+        flex-direction: row;
+    }
+
+    .bioBox {
+        margin-right: 0;
+    }
+}
+
+.bioTitle {
+    font-size: 18px;
+    color: var(--color-contrast);
+}
+
+.bioTitle > h1 {
+    margin: 10px 0;
+}
+
+.spacer {
+    width: 100%;
+}
+
+.spacer > div {
+    justify-content: flex-start;
+}
+
+.bioBody {
+    color: var(--color-dark);
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.photo {
+    margin-top: 20px;
+}
+
+.photo * {
+    position: relative;
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    border: 10px solid var(--color-main-alt);
+    box-shadow: 5px 5px 40px rgba(1, 1, 1, 0.5);
+}
+
+@media screen and (min-width: 1200px) {
+
+    .photo {
+        margin-top: 0;
+    }
+
+    .photo * {
+        border: 15px solid var(--color-main-alt);
+    }
+}
+
+
+.skillsContactSections {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.skillsHeadline {
+    display: flex;
+    justify-content: center;
+    font-size: 24px;
+    color: var(--color-main-alt);
+}
+
+.skillsBoxesHolder {
+    display: flex;
+    flex-direction: row;
+
+}
+
+.skillBox {
+    background-color: var(--color-main-alt);
+    border-radius: var(--border-radius);
+    margin: 0 20px 100px 20px;
+    padding: 10px;
+    box-shadow: 5px 5px 5px rgba(1, 1, 1, 0.5);
+    max-width: 200px;
+    min-width: 200px;
+}
+
+.skillsTitle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.skillsSpacer {
+    width: 100%;
+}
+
+.skillsText {
+    margin-left: 10px;
+    color: var(--color-dark);
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.skillsText > p {
+    margin: 10px 0;
+}
+
+.skillsText > p::before {
+    display: inline-block;
+    content: " ";
+    min-width: 10px;
+    min-height: 10px;
+    margin-right: 10px;
+    border-radius: 50%;
+    background-color: var(--color-dark);
+}

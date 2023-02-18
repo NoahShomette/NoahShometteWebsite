@@ -1,8 +1,78 @@
-//import React from 'react';
+import styles from "./AboutMe.module.css";
+import photo from "../resources/NoahShometteMainPic.jpeg";
+import Spacer from "../components/design/spacers/Spacer";
+import {useColors} from "../context/colorsContext";
 
 function AboutMe() {
+    let colors = useColors();
+
     return (
-        <h1>My Skills</h1>
+        <>
+            <div className={styles.pageBody}>
+                <div className={styles.bioHolder}>
+                    <div className={styles.photo}>
+                        <img src={photo}
+                             alt="Noah Shomette"/>
+                    </div>
+                    <div className={styles.bioBox}>
+                        <div className={styles.bioTitle}>
+                            <h1>Bio</h1>
+                        </div>
+                        <div className={styles.spacer}>
+                            <Spacer color={colors.activeColor.colorDark} height="3px" width="40%"></Spacer>
+                        </div>
+
+                        <div className={styles.bioBody}>
+                            <p>I’m a recent college graduate, passionate about technology and learning, currently
+                                looking for a role in software development!</p>
+                        </div>
+                    </div>
+                </div>
+                <div className={styles.skillsContactSections}>
+                    <div className={styles.contactSection}></div>
+                    <Spacer color={colors.activeColor.colorMainAlt} height="80%" width="3px"></Spacer>
+                    <div className={styles.skills}>
+                        <div className={styles.skillsHeadline}>
+                            <h2>Skills and Proficincies</h2>
+                        </div>
+                        <div className={styles.skillsBoxesHolder}>
+                            <div className={styles.skillBox}>
+                                <div className={styles.skillsTitle}>
+                                    <h2>Languages</h2>
+                                </div>
+                                <div className={styles.skillsSpacer}>
+                                    <Spacer color={colors.activeColor.colorDark} height="3px" width="80%"></Spacer>
+                                </div>
+                                <div className={styles.skillsText}>
+                                    <p>HTML</p>
+                                    <p>CSS</p>
+                                    <p>Javascript / Typescript</p>
+                                    <p>Rust</p>
+                                    <p>C#</p>
+                                </div>
+                            </div>
+                            <div className={styles.skillBox}>
+                                <div className={styles.skillsTitle}>
+                                    <h2>Tools</h2>
+                                </div>
+                                <div className={styles.skillsSpacer}>
+                                    <Spacer color={colors.activeColor.colorDark} height="3px" width="80%"></Spacer>
+                                </div>
+                                <div className={styles.skillsText}>
+                                    <p>React</p>
+                                    <p>Next JS</p>
+                                    <p>Git</p>
+                                    <p>Zola</p>
+                                    <p>Firebase</p>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </>
     );
 }
 

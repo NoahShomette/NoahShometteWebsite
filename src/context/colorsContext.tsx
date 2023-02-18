@@ -12,12 +12,12 @@ type colorInfo = {
 }
 
 const colorInfoDefault: colorInfo = {
-    gradient: true,
-    colorMain: "#FCEF04",
-    colorSecondaryGradient: "#DC419B",
-    colorMainAlt: "#FFC985",
-    colorContrast: "#1C1C1C",
-    colorLight: "#FFFFFF",
+    gradient: false,
+    colorMain: "#341D27",
+    colorSecondaryGradient: "#468132",
+    colorMainAlt: "#653D4E",
+    colorContrast: "#F0A53B",
+    colorLight: "#DBDBDB",
     colorDark: "#1C1C1C",
 }
 
