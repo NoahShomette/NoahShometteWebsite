@@ -2,11 +2,11 @@ import styles from "../components/Navbar.module.css";
 import {faBars, faPalette, faUpRightFromSquare, faX} from "@fortawesome/free-solid-svg-icons";
 import LinkButton from "./interface/LinkButton";
 import Button from "./interface/Button";
-import VerticalSpacer from "./design/spacers/VerticalSpacer";
 import React, {useEffect, useState} from "react";
 import {useColors} from "../context/colorsContext";
 import {ButtonSize} from "../utils/options";
 import ColorSelector from "./colorSelector";
+import Spacer from "./design/spacers/Spacer";
 
 export default function Navbar() {
     const [mobileMenuVisible, setMobileMenuIsVisible] = useState(false);
@@ -76,7 +76,7 @@ export default function Navbar() {
                     <Button buttonText={"Github"} buttonLink={"https://github.com/NoahShomette"} icon={true}
                             iconDefinition={faUpRightFromSquare} text={true} link={true} background={true}
                             textSize={buttonSize} iconSize={"sm"}/>
-                    <VerticalSpacer></VerticalSpacer>
+                    <Spacer color={colorContext.activeColor.colorContrast} height="70%" width="3px"></Spacer>
                     <Button buttonText={""} buttonLink={""} icon={true}
                             iconDefinition={faPalette} text={false} link={false} background={true}
                             textSize={buttonSize} buttonOnClick={handleColorSelectorClick} iconSize={"lg"}/>

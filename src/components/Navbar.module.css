@@ -12,6 +12,7 @@
     font-weight: 900;
     font-size: 28px;
     line-height: 1.2;
+    letter-spacing: 2px;
 }
 
 @media screen and (min-width: 1200px) {
