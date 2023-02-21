@@ -5,6 +5,7 @@
 }
 
 .navbar * {
+    transition: all 0.3s;
     color: var(--color-contrast);
 }
 
@@ -13,6 +14,16 @@
     font-size: 28px;
     line-height: 1.2;
     letter-spacing: 2px;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.name:hover {
+    transform: scale(110%);
+}
+
+.name:active * {
+    color: var(--color-main-alt);
 }
 
 @media screen and (min-width: 1200px) {
@@ -21,6 +32,7 @@
         flex-direction: row;
         margin: 20px 35px 20px 35px;
     }
+
     .name {
         font-size: 32px;
     }
@@ -68,7 +80,7 @@
     width: 90%;
 }
 
-.colorSelector{
+.colorSelector {
     display: none;
     position: absolute;
     right: 50px;
@@ -76,11 +88,11 @@
     background-color: var(--color-main-alt);
     border-radius: 15px;
     transition: all 0.3s;
-    box-shadow: -5px 5px 40px rgba(1,1,1,0.5);
+    box-shadow: -5px 5px 40px rgba(1, 1, 1, 0.5);
 }
 
 @media screen and (min-width: 800px) {
-    .colorSelector.colorSelectorEnabled{
+    .colorSelector.colorSelectorEnabled {
         display: block;
     }
 }
@@ -93,7 +105,7 @@
     width: 100%;
 }
 
-.hamburger > div{
+.hamburger > div {
     padding: 20px;
 }
 
@@ -140,7 +152,7 @@
     padding: 20px 5px 20px 5px;
     border-radius: 20px;
     transition: all 1s;
-    box-shadow: -5px 5px 40px rgba(1,1,1,0.5);
+    box-shadow: -5px 5px 40px rgba(1, 1, 1, 0.5);
     z-index: 101;
 }
 
@@ -211,22 +223,22 @@
     width: 100%;
 }
 
-.mobileMenuCloseButton > div{
+.mobileMenuCloseButton > div {
     padding: 20px;
 }
 
-.mobileButtons{
+.mobileButtons {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.mobileButtons > a{
+.mobileButtons > a {
     padding: 10px 0 10px 0;
 }
 
-.mobileColorSelector{
+.mobileColorSelector {
     display: flex;
     flex-direction: column;
     justify-content: center;

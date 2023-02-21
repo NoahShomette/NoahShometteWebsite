@@ -7,6 +7,7 @@ import {useColors} from "../context/colorsContext";
 import {ButtonSize} from "../utils/options";
 import ColorSelector from "./colorSelector";
 import Spacer from "./design/spacers/Spacer";
+import {Link} from "react-router-dom";
 
 export default function Navbar() {
     const [mobileMenuVisible, setMobileMenuIsVisible] = useState(false);
@@ -62,10 +63,10 @@ export default function Navbar() {
 
     return (
         <nav className={[styles.navbar].join(" ")}>
-            <div className={styles.name}>
+            <Link className={styles.name} to="/">
                 <div>NOAH</div>
                 <div>SHOMETTE</div>
-            </div>
+            </Link>
             <div className={styles.rightNav}>
                 <div className={styles.buttons}>
                     <LinkButton buttonLink={"/"} buttonText={"Home"} background={true} textSize={buttonSize}/>
