@@ -24,8 +24,9 @@ function Projects() {
                             projectPhotoPath={ggfPhoto}
                             photoAlt="Bevy GGF grid example"
                             githubLink={"https://github.com/NoahShomette/bevy_ggf"}
-                            bulletPoints={["Built using Rust and the Bevy Game engine",
-                                "Provides systems to cover basic game features like movement, combat, selection, camera, and more while allowing any of it to be customized or removed as needed"]}
+                            bulletPoints={["Built using Rust and the Bevy Game engine utilizing an ECS composition based design pattern",
+                                "Created basic systems to cover essential game features like movement, combat, selection, camera, and more while allowing any of it to be customized or removed as needed",
+                                "Implemented an Event Driven Architecture for maximum flexibility"]}
                             utilizes="Rust, ECS, Github"
                         />
                     </div>

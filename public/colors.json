@@ -1,6 +1,15 @@
 ﻿{
   "colors": [
     {
+      "gradient": false,
+      "colorMain": "#341D27",
+      "colorSecondaryGradient": "#468132",
+      "colorMainAlt": "#653D4E",
+      "colorContrast": "#F0A53B",
+      "colorLight": "#DBDBDB",
+      "colorDark": "#171717"
+    },
+    {
       "gradient": true,
       "colorMain": "#FCEF04",
       "colorSecondaryGradient": "#DC419B",
@@ -11,19 +20,19 @@
     },
     {
       "gradient": false,
-      "colorMain": "#229A68",
+      "colorMain": "#64B947",
       "colorSecondaryGradient": "#468132",
-      "colorMainAlt": "#3DC88D",
-      "colorContrast": "#FFDBB5",
+      "colorMainAlt": "#87D86A",
+      "colorContrast": "#245B1C",
       "colorLight": "#DBDBDB",
       "colorDark": "#1C1C1C"
     },
     {
       "gradient": false,
-      "colorMain": "#341D27",
+      "colorMain": "#1D6C4B",
       "colorSecondaryGradient": "#468132",
-      "colorMainAlt": "#653D4E",
-      "colorContrast": "#F0A53B",
+      "colorMainAlt": "#489B78",
+      "colorContrast": "#FFC689",
       "colorLight": "#DBDBDB",
       "colorDark": "#1C1C1C"
     },
@@ -32,7 +41,7 @@
       "colorMain": "#EF566A",
       "colorSecondaryGradient": "#627AF7",
       "colorMainAlt": "#EF93FB",
-      "colorContrast": "#1C1C1C",
+      "colorContrast": "#2F1A38",
       "colorLight": "#FFFFFF",
       "colorDark": "#1C1C1C"
     }

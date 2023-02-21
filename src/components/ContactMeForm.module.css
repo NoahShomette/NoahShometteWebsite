@@ -1,0 +1,108 @@
+﻿.formHolder {
+    margin: 20px;
+    min-width: 300px;
+    min-height: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.submittedResponse {
+    background-color: var(--color-main-alt);
+    padding: 25px;
+    border-radius: 30px;
+    font-weight: 700;
+    font-size: 16px;
+    letter-spacing: 1px;
+}
+
+.error {
+    background-color: #FC4848;
+    padding: 5px;
+    border-radius: 30px;
+    margin: 5px;
+    color: var(--color-dark);
+    text-align: center;
+    border: solid var(--color-dark) 2px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+input {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 15px;
+    margin: 10px;
+    border-radius: 10px;
+    background-color: var(--color-main-alt);
+    border: none;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+input::placeholder {
+    color: var(--color-dark);
+    font-weight: 600;
+}
+
+input:focus {
+    border: none;
+    outline: solid var(--color-contrast) 2px;
+}
+
+textarea {
+    box-sizing: border-box;
+    width: 100%;
+    height: 100px;
+    padding: 10px;
+    margin: 10px;
+    resize: none;
+    border-radius: 10px;
+    background-color: var(--color-main-alt);
+    color: var(--color-dark);
+    border: none;
+    font-weight: 600;
+    font-family: Montserrat, sans-serif;
+    font-size: 14px;
+}
+
+textarea::placeholder {
+    color: var(--color-dark);
+    font-weight: 700;
+}
+
+textarea:focus {
+    border: none;
+    outline: solid var(--color-contrast) 2px;
+}
+
+button {
+    width: 80%;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+    background-color: var(--color-main-alt);
+    border: none;
+    color: var(--color-contrast);
+    font-weight: 900;
+    transition: all 0.3s;
+    font-size: 18px;
+
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: var(--color-contrast);
+    color: var(--color-main-alt);
+}
+
+button:active {
+    background-color: var(--color-main-alt);
+    color: var(--color-contrast);
+}

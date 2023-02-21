@@ -24,13 +24,15 @@
     align-items: center;
 }
 
+.bio {
+    margin: 20px 30px 30px 30px;
+}
+
 .bioBox {
     display: flex;
-    justify-content: center;
     flex-direction: column;
-    align-items: flex-start;
+    justify-content: space-between;
     padding: 25px;
-    margin: 30px 30px 30px 30px;
     background-color: var(--color-main-alt);
     max-width: 700px;
     border-radius: var(--border-radius);
@@ -48,6 +50,7 @@
 }
 
 .bioTitle {
+    margin-left: 20px;
     font-size: 18px;
     color: var(--color-contrast);
 }
@@ -57,6 +60,7 @@
 }
 
 .spacer {
+    margin: 0 0 10px 0;
     width: 100%;
 }
 
@@ -64,10 +68,15 @@
     justify-content: flex-start;
 }
 
-.bioBody {
+.bioText {
     color: var(--color-dark);
-    font-size: 18px;
+    line-height: 1.4;
+    font-size: 16px;
     font-weight: 700;
+}
+
+.bioText > p {
+    margin: 10px 0 0 0;
 }
 
 .photo {
@@ -97,27 +106,53 @@
 
 .skillsContactSections {
     display: flex;
-    flex-direction: row;
+    flex-direction: column-reverse;
     justify-content: center;
+}
+
+@media screen and (min-width: 800px) {
+    .skillsContactSections {
+        flex-direction: row;
+    }
+}
+
+.skills {
+    margin-left: 0;
+}
+
+@media screen and (min-width: 800px) {
+    .skills {
+        margin-left: 20px;
+    }
 }
 
 .skillsHeadline {
     display: flex;
     justify-content: center;
+    text-align: center;
     font-size: 24px;
-    color: var(--color-main-alt);
+    color: var(--color-contrast);
 }
 
 .skillsBoxesHolder {
     display: flex;
-    flex-direction: row;
-
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
+
+@media screen and (min-width: 800px) {
+    .skillsBoxesHolder {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+}
+
 
 .skillBox {
     background-color: var(--color-main-alt);
     border-radius: var(--border-radius);
-    margin: 0 20px 100px 20px;
+    margin: 0 20px 20px 20px;
     padding: 10px;
     box-shadow: 5px 5px 5px rgba(1, 1, 1, 0.5);
     max-width: 200px;
@@ -129,6 +164,10 @@
     justify-content: center;
     align-items: center;
     text-align: center;
+}
+
+.skillsTitle > h2 {
+    margin: 10px;
 }
 
 .skillsSpacer {

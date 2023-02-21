@@ -6,7 +6,6 @@ import {ReactNode, useState} from "react";
 import Button from "./interface/Button";
 import {ButtonSize} from "../utils/options";
 import {faCircleArrowLeft, faCircleArrowRight} from "@fortawesome/free-solid-svg-icons";
-import {v4 as uuidv4} from "uuid";
 
 export default function ColorSelector() {
 
@@ -56,14 +55,14 @@ export default function ColorSelector() {
                 <Button text={false} buttonText={""} link={false} buttonLink={""} icon={true}
                         iconDefinition={faCircleArrowLeft} background={false} textSize={ButtonSize.medium}
                         iconSize={"2x"} buttonOnClick={handleTabLeft} iconColor={activeColor.colorDark}
-                        iconHover={activeColor.colorContrast}/>
+                        iconHover={activeColor.colorContrast} aria-label="Previous Tab"/>
                 <div className={styles.dotHolder}>
                     {getTabDots(colorTab)}
                 </div>
                 <Button text={false} buttonText={""} link={false} buttonLink={""} icon={true}
                         iconDefinition={faCircleArrowRight} background={false} textSize={ButtonSize.medium}
                         iconSize={"2x"} buttonOnClick={handleTabRight} iconColor={activeColor.colorDark}
-                        iconHover={activeColor.colorContrast}/>
+                        iconHover={activeColor.colorContrast} aria-label="Next Tab"/>
             </div>
         )
     }
