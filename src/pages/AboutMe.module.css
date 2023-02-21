@@ -131,12 +131,14 @@
     justify-content: center;
     text-align: center;
     font-size: 24px;
+    margin: 0 20px 0 20px;
     color: var(--color-contrast);
 }
 
 .skillsBoxesHolder {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    flex-flow: wrap;
     justify-content: center;
     align-items: center;
 }

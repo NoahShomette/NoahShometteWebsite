@@ -38,12 +38,11 @@ function AboutMe() {
                         </div>
                     </div>
                 </div>
-
                 <div className={styles.skillsContactSections}>
                     <div className={styles.contactSection}>
                         <ContactMeForm></ContactMeForm>
                     </div>
-                        <Spacer color={colors.activeColor.colorMainAlt} height="80%" width="3px"></Spacer>
+                    <Spacer color={colors.activeColor.colorMainAlt} height="80%" width="3px"></Spacer>
                     <div className={styles.skills}>
                         <div className={styles.skillsHeadline}>
                             <h2>Skills and Proficincies</h2>
@@ -83,6 +82,8 @@ function AboutMe() {
 
 
                     </div>
+                    <Spacer color={colors.activeColor.colorMainAlt} height="3px" width="90%"></Spacer>
+
                 </div>
             </div>
         </>
