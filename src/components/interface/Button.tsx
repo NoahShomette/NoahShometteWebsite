@@ -91,7 +91,8 @@ export default function Button(props: ButtonProps) {
     function getButton() {
         if (props.link) {
             return (
-                <a href={props.buttonLink} className={[styles.button, buttonStyles].join(" ")}
+                <a href={props.buttonLink} target="_blank" rel="noopener noreferrer"
+                   className={[styles.button, buttonStyles].join(" ")}
                    onMouseEnter={handleMouseEnter}
                    onMouseLeave={handleMouseLeave} onClick={props.buttonOnClick}
                    {...props.background ? {style: {backgroundColor: backgroundColor}} : undefined}

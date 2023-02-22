@@ -4,6 +4,7 @@ import ProjectsCard from "../components/ProjectsCard";
 import foslorePhoto from "../resources/chrome_kyQ9DFYpZv.png";
 import ggfPhoto from "../resources/ApplicationFrameHost_Gqgyf9kgle.gif";
 import spaceCommanderPhoto from "../resources/spaceCommander.png";
+import bulletHell from "../resources/bulletHell2.gif"
 
 function Projects() {
 
@@ -30,7 +31,21 @@ function Projects() {
                             utilizes="Rust, ECS, Github"
                         />
                     </div>
-
+                    <div className={styles.card}>
+                        <ProjectsCard
+                            projectTitle="Not Another Generic Bullet hell"
+                            projectDescription="A bullet hell game made in Unity for a bullet hell game jam"
+                            projectPhotoPath={bulletHell}
+                            photoAlt="Gif of gameplay"
+                            websiteName={"gizzardwizzard.itch.io/not-another-generic-bullet-hell"}
+                            websiteLink={"https://gizzardwizzard.itch.io/not-another-generic-bullet-hell"}
+                            githubLink={"https://github.com/NoahShomette/FOSLore"}
+                            bulletPoints={["Built with Unity, C#, and Aseprite",
+                                "Implemented post processing to enhance gameplay, style, and drama",
+                                "Implemented core game features - player movement, shooting, damage, and boss attack patterns"]}
+                            utilizes="Unity, Perforce, C#, Aseprite"
+                        />
+                    </div>
                     <div className={styles.card}>
                         <ProjectsCard
                             projectTitle="Foslore"
@@ -42,8 +57,7 @@ function Projects() {
                             websiteLink={"https://www.foslore.com"}
                             githubLink={"https://github.com/NoahShomette/FOSLore"}
                             bulletPoints={["Built with basic HTML and SCSS and integrated with Github to enable automatic builds and CI/CD",
-                                "Built a variety of components to enable feature rich articles and content",
-                                "Created rules, contribution pipelines, tutorials, and more to facilitate anyone contributing their stories"]}
+                                "Built a variety of components to enable feature rich articles and content"]}
                             utilizes="HTML, SCSS, Javascript, Static Site Generator, Github"
                         />
                     </div>
@@ -57,7 +71,8 @@ function Projects() {
                             websiteName={"noahshomette.itch.io/space-commander.com"}
                             websiteLink={"https://noahshomette.itch.io/space-commander"}
                             githubLink={"https://github.com/NoahShomette/space_commander_game"}
-                            bulletPoints={["Built in Rust using the Bevy game engine in 10 days"]}
+                            bulletPoints={["Built in Rust using the Bevy game engine in 10 days",
+                                "Integrated Github actions for automatic builds and deployment to Itch"]}
                             utilizes="Rust, ECS, Github"/>
                     </div>
                 </div>
