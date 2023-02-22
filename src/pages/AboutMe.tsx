@@ -30,9 +30,9 @@ function AboutMe() {
                                     looking for a role in software development!
                                 </p>
                                 <p>
-                                    I love getting to make things, whether
-                                    thats a game framework for myself and others, 3d printed tools and toys, or websites
-                                    and software. Making things is fun and I want to make things for a living!
+                                    I love learning about software development and getting to use what I've learned in
+                                    my personal projects. From game jams, to my website, to the tactics framework I am
+                                    making, and beyond, I relish getting the chance to push my boundaries and grow!
                                 </p>
                             </div>
                         </div>
