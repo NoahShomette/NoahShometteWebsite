@@ -39,7 +39,6 @@ function Projects() {
                             photoAlt="Gif of gameplay"
                             websiteName={"gizzardwizzard.itch.io/not-another-generic-bullet-hell"}
                             websiteLink={"https://gizzardwizzard.itch.io/not-another-generic-bullet-hell"}
-                            githubLink={"https://github.com/NoahShomette/FOSLore"}
                             bulletPoints={["Built with Unity, C#, and Aseprite",
                                 "Implemented post processing to enhance gameplay, style, and drama",
                                 "Implemented core game features - player movement, shooting, damage, and boss attack patterns"]}
