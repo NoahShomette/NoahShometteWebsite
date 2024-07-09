@@ -1,8 +1,13 @@
 import styles from "./Index.module.css";
 import photo from "../resources/NoahShometteMainPic.jpeg";
+import ContactMeForm from "../components/ContactMeForm";
+import Spacer from "../components/design/spacers/Spacer";
+import { useColors } from "../context/colorsContext";
 
 function Index() {
-    /* mobile button stuff - just saving for now
+  let colorContext = useColors();
+
+  /* mobile button stuff - just saving for now
     const [mQuery, setMQuery] = useState({matches: window.innerWidth > 1200});
     
     useEffect(() => {
@@ -27,29 +32,63 @@ function Index() {
             </div> : <div/>}
      */
 
-    return (
-        <div className={styles.pageBody}>
-            <div className={styles.intro}>
-                <div className={styles.decoration}>
-                    <div className={styles.hi}>Hi!</div>
-                    <div className={styles.photo}>
-                        <img src={photo}
-                             alt="Noah Shomette"/>
-                    </div>
-
-                </div>
-                <div className={styles.header}>
-                    <h1>I’m <span>Noah Shomette</span>, a web developer and indie game dev!</h1>
-                </div>
-            </div>
-            <div className={styles.subline}>
-                <p>I have experience
-                    in <span>web</span>, <span>game development</span>, <span>open source software</span>,
-                    and <span>more</span>!</p>
-            </div>
+  return (
+    <div className={styles.pageBody}>
+      <div className={styles.intro}>
+        <div className={styles.decoration}>
+          <div className={styles.hi}>Hi!</div>
+          <div className={styles.photo}>
+            <img src={photo} alt="Noah Shomette" />
+          </div>
         </div>
+        <div className={styles.header}>
+          <h1>
+            I’m <span>Noah Shomette</span>, a web developer and indie game dev
+            <span>.</span>
+          </h1>
+        </div>
+      </div>
+      <div className={styles.subInfo}>
+        <div className={styles.subline}>
+          <h2>
+            <span>Some things I'm proud of: </span>
+          </h2>
+          <div className={styles.spacer}>
+            {" "}
+            <Spacer
+              color={colorContext.activeColor.colorMainAlt}
+              height="3px"
+              width="90%"
+            ></Spacer>
+          </div>
 
-    );
+          <div>
+            <ul>
+              <li>
+                Full time <span>Web Developer.</span>
+              </li>
+              <li>
+                Certified <span>North Carolina EMT.</span>
+              </li>
+              <li>
+                Graduated College with a degree in{" "}
+                <span>Criminal Justice.</span>
+              </li>
+              <li>
+                Open source developer<span>.</span>
+              </li>
+              <li>
+                Indie game developer<span>.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div className={styles.contactSection}>
+          <ContactMeForm></ContactMeForm>
+        </div>
+      </div>
+    </div>
+  );
 }
 
 export default Index;

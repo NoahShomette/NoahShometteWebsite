@@ -41,7 +41,7 @@
 @media screen and (min-width: 1200px) {
 }
 
-.projectss {
+.projectsss {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
 }

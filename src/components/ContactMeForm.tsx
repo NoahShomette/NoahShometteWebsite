@@ -1,5 +1,5 @@
 import styles from "./ContactMeForm.module.css"
-import React, {ChangeEventHandler, ReactNode, useEffect, useRef, useState} from "react";
+import React, {ReactNode, useEffect, useState} from "react";
 import emailjs from '@emailjs/browser';
 
 type error = {
@@ -45,7 +45,7 @@ export default function ContactMeForm() {
     }
 
 
-    useEffect(validateForms, [submitted, name, email, message]);
+    useEffect(validateForms, [submitted, name, email, message, emailValidity]);
 
     function validateForms() {
         let valid = true;
