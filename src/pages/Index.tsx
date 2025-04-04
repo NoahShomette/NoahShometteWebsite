@@ -68,7 +68,7 @@ function Index() {
                 Full time <span>Web Developer.</span>
               </li>
               <li>
-                Certified <span>North Carolina EMT.</span>
+                Certified <span>Nationally Registered EMT.</span>
               </li>
               <li>
                 Graduated College with a degree in{" "}
