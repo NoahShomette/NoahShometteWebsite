@@ -25,5 +25,7 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
    # - run: npm ci
+    - run: npm install react-scripts
+    - run: npm install gh-pages
     - run: npm run deploy
    # - run: npm test
